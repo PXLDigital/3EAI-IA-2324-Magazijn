@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-23T09:48:45.457Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="wFn6QEeSF3mqjsOLTSqb" version="22.1.3" type="device">
+<mxfile host="app.diagrams.net" modified="2023-11-23T10:14:58.568Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="BnqgaKx8SeQIDI_spX0W" version="22.1.3" type="device">
   <diagram name="Page-1" id="mUNR78RhuHrCIeS9Hqll">
-    <mxGraphModel dx="1687" dy="1311" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="1174" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -261,7 +261,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="yzJS9J3DVjndkJ2F-cnb-7" value="&lt;div&gt;Respberry Pi&lt;/div&gt;&lt;div&gt;influxdb&lt;/div&gt;&lt;div&gt;Caddy&lt;br&gt;&lt;/div&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=1;" vertex="1" parent="1">
+        <mxCell id="yzJS9J3DVjndkJ2F-cnb-7" value="&lt;div&gt;Raspberry Pi&lt;/div&gt;&lt;div&gt;influxdb&lt;/div&gt;&lt;div&gt;Caddy&lt;br&gt;&lt;/div&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=1;" vertex="1" parent="1">
           <mxGeometry x="110" y="-120" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yzJS9J3DVjndkJ2F-cnb-8" value="Auto Restock" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
