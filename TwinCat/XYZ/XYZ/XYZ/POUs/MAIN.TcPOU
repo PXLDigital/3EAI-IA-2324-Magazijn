@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{57b2c4ba-e37a-4e94-b424-6116166e21ce}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbHomeX : MC_Home;
+	fbHomeY : MC_Home;
+	fbHomeZ : MC_Home;
+	
+	test : R_TRIG;
+	btn AT %I* : BOOL;
+	trigger : bool := false;
+	
+	fbTriggerHomeX : R_TRIG;
+	fbTriggerHomeY : R_TRIG;
+	fbTriggerHomeZ : R_TRIG;
+	
+	bCMDHomeX : BOOL;
+	bCMDHomeY : BOOL;
+	bCMDHomeZ : BOOL;
+	
+	fbPowerXa : MC_Power;
+	fbPowerXb : MC_Power;
+	fbPowerY  : MC_Power;
+	fbPowerZ  : MC_Power;
+	
+	fbAxisXa: AXIS_REF;
+	fbAxisXb: AXIS_REF;
+	fbAxisY:  AXIS_REF;
+	fbAxisZ:  AXIS_REF;
+	
+	bLimitSwitchX AT %I* : BOOL;
+	bLimitSwitchY AT %I* : BOOL;
+	bLimitSwitchZ AT %I* : BOOL;
+	
+	nState : USINT := 0;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*fbAxisXa.ReadStatus();
+fbAxisXb.ReadStatus();
+fbAxisY.ReadStatus();
+fbAxisZ.ReadStatus();*)
+
+test(CLK := btn);
+IF test.Q THEN
+	trigger := TRUE;
+END_IF
+
+(*
+fbTriggerHomeX(CLK := bCMDHomeX);
+fbTriggerHomeY(CLK := bCMDHomeY);
+fbTriggerHomeZ(CLK := bCMDHomeZ);
+
+CASE nState OF
+	0:
+	fbHomeX(Axis := fbPowerXa, Execute := FALSE);
+	fbHomeY(Axis := fbAxisY, Execute := FALSE);
+	fbHomeZ(Axis := fbAxisZ, Execute := FALSE);
+	
+	fbPowerXa(Axis := fbAxisXa, Enable := FALSE, Enable_Positive := FALSE, Enable_Negative := FALSE, Override := 0);
+	fbPowerXb(Axis := fbAxisXb, Enable := FALSE, Enable_Positive := FALSE, Enable_Negative := FALSE, Override := 0);
+	fbPowerY(Axis := fbAxisY, Enable := FALSE, Enable_Positive := FALSE, Enable_Negative := FALSE, Override := 0);
+	fbPowerZ(Axis := fbAxisZ, Enable := FALSE, Enable_Positive := FALSE, Enable_Negative := FALSE, Override := 0);
+	IF fbTriggerHomeY.Q THEN nState := 10; END_IF
+	10:
+	fbPowerY(Axis := fbAxisY, Enable := TRUE, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100, BufferMode := MC_Buffered);
+	fbHomeY(Axis := fbAxisY, Execute := TRUE, Position := 0, HomingMode := MC_DefaultHoming, bCalibrationCam := bLimitSwitchY);
+	IF fbHomeY.Done THEN nState := 0; END_IF
+END_CASE*)]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="62" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="82" Count="2" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="66" Count="1" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="68" Count="1" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="72" Count="1" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="22" Count="1" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
