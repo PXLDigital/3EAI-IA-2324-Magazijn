@@ -3,32 +3,43 @@
   <POU Name="MAIN" Id="{57b2c4ba-e37a-4e94-b424-6116166e21ce}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	fbHomeX : MC_Home;
-	fbHomeY : MC_Home;
-	fbHomeZ : MC_Home;
-	
 	test : R_TRIG;
 	btn AT %I* : BOOL;
 	trigger : bool := false;
 	
-	fbTriggerHomeX : R_TRIG;
-	fbTriggerHomeY : R_TRIG;
-	fbTriggerHomeZ : R_TRIG;
+	fbTriggerHome : R_TRIG;
+	fbTriggerStop : R_TRIG;
 	
-	bCMDHomeX : BOOL;
-	bCMDHomeY : BOOL;
-	bCMDHomeZ : BOOL;
+	bCMDHome : BOOL;
+	bCMDStop : BOOL;
 	
-	fbPowerXa : MC_Power;
-	fbPowerXb : MC_Power;
-	fbPowerY  : MC_Power;
-	fbPowerZ  : MC_Power;
-	
+	// Axis REF
 	fbAxisXa: AXIS_REF;
 	fbAxisXb: AXIS_REF;
 	fbAxisY:  AXIS_REF;
 	fbAxisZ:  AXIS_REF;
-	
+	// Axis Power
+	fbPowerXa : MC_Power;
+	fbPowerXb : MC_Power;
+	fbPowerY  : MC_Power;
+	fbPowerZ  : MC_Power;
+	// Axis Reset
+	fbResetXa : MC_Reset;
+	fbResetXb : MC_Reset;
+	fbResetY  : MC_Reset;
+	fbResetZ  : MC_Reset;
+	// Axis Home
+	fbHomeX : MC_Home;
+	fbHomeY : MC_Home;
+	fbHomeZ : MC_Home;
+	// Axis Gearing
+	fbGearInX  : MC_GearIn;
+	fbGearOutX : MC_GearOut;
+	// Axis Move
+	fbMoveX : MC_MoveAbsolute;
+	fbMoveY : MC_MoveAbsolute;
+	fbMoveZ : MC_MoveAbsolute;
+	// Aixs Limit Switches
 	bLimitSwitchX AT %I* : BOOL;
 	bLimitSwitchY AT %I* : BOOL;
 	bLimitSwitchZ AT %I* : BOOL;
@@ -37,37 +48,101 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(*fbAxisXa.ReadStatus();
+      <ST><![CDATA[fbAxisXa.ReadStatus();
 fbAxisXb.ReadStatus();
 fbAxisY.ReadStatus();
-fbAxisZ.ReadStatus();*)
+fbAxisZ.ReadStatus();
 
 test(CLK := btn);
 IF test.Q THEN
 	trigger := TRUE;
 END_IF
 
-(*
-fbTriggerHomeX(CLK := bCMDHomeX);
-fbTriggerHomeY(CLK := bCMDHomeY);
-fbTriggerHomeZ(CLK := bCMDHomeZ);
+fbTriggerHome(CLK := bCMDHome);
+fbTriggerStop(CLK := bCMDStop);
 
 CASE nState OF
 	0:
-	fbHomeX(Axis := fbPowerXa, Execute := FALSE);
-	fbHomeY(Axis := fbAxisY, Execute := FALSE);
-	fbHomeZ(Axis := fbAxisZ, Execute := FALSE);
-	
+	// Idle
 	fbPowerXa(Axis := fbAxisXa, Enable := FALSE, Enable_Positive := FALSE, Enable_Negative := FALSE, Override := 0);
 	fbPowerXb(Axis := fbAxisXb, Enable := FALSE, Enable_Positive := FALSE, Enable_Negative := FALSE, Override := 0);
 	fbPowerY(Axis := fbAxisY, Enable := FALSE, Enable_Positive := FALSE, Enable_Negative := FALSE, Override := 0);
 	fbPowerZ(Axis := fbAxisZ, Enable := FALSE, Enable_Positive := FALSE, Enable_Negative := FALSE, Override := 0);
-	IF fbTriggerHomeY.Q THEN nState := 10; END_IF
+	
+	fbResetXa(Axis := fbAxisXa, Execute := FALSE);
+	fbResetXb(Axis := fbAxisXb, Execute := FALSE);
+	fbResetY(Axis := fbAxisY, Execute := FALSE);
+	fbResetZ(Axis := fbAxisZ, Execute := FALSE);
+	
+	fbHomeX(Axis := fbAxisXa, Execute := FALSE);
+	fbHomeY(Axis := fbAxisY, Execute := FALSE);
+	fbHomeZ(Axis := fbAxisZ, Execute := FALSE);
+	
+	fbGearInX(Master := fbAxisXa, Slave := fbAxisXb, Execute := FALSE);
+	fbGearOutX(Slave := fbAxisXb, Execute := FALSE);
+	
+	IF fbTriggerHome.Q THEN nState := 10; END_IF
 	10:
-	fbPowerY(Axis := fbAxisY, Enable := TRUE, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100, BufferMode := MC_Buffered);
-	fbHomeY(Axis := fbAxisY, Execute := TRUE, Position := 0, HomingMode := MC_DefaultHoming, bCalibrationCam := bLimitSwitchY);
-	IF fbHomeY.Done THEN nState := 0; END_IF
-END_CASE*)]]></ST>
+	// Enable Power
+	fbPowerXa(Axis := fbAxisXa, Enable := TRUE, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100);
+	fbPowerXb(Axis := fbAxisXb, Enable := TRUE, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100);
+	fbPowerY(Axis := fbAxisY, Enable := TRUE, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100);
+	fbPowerZ(Axis := fbAxisZ, Enable := TRUE, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100);
+	IF fbPowerXa.Status AND fbPowerXb.Status AND fbPowerY.Status AND fbPowerZ.Status THEN nState := 20; END_IF
+	20:
+	// Gear In X
+	fbGearOutX(Slave := fbAxisXb, Execute := FALSE);
+	fbGearInX(Master := fbAxisXa, Slave := fbAxisXb, Execute := TRUE);
+	IF fbGearInX.InGear THEN nState := 30; END_IF
+	30:
+	// Home
+	fbHomeX(Axis := fbAxisXa, Execute := TRUE, bCalibrationCam := bLimitSwitchX);
+	fbHomeY(Axis := fbAxisY, Execute := TRUE, bCalibrationCam := bLimitSwitchY);
+//	fbHomeZ(Axis := fbAxisZ, Execute := TRUE, bCalibrationCam := bLimitSwitchZ);
+	IF fbHomeX.Done AND fbHomeY.Done (*AND fbHomeZ.Done*) THEN nState := 40; END_IF
+	40:
+	// Ready
+	fbMoveX(Axis := fbAxisXa, Execute := TRUE, Position := 50);
+	fbMoveY(Axis := fbAxisY, Execute := TRUE, Position := 120);
+	IF fbMoveX.Done AND fbMoveY.Done THEN nState := 41; END_IF
+	41:
+	fbMoveX(Axis := fbAxisXa, Execute := TRUE, Position := 50);
+	fbMoveY(Axis := fbAxisY, Execute := TRUE, Position := 10);
+	IF fbMoveX.Done AND fbMoveY.Done THEN nState := 42; END_IF
+	42:
+	fbMoveX(Axis := fbAxisXa, Execute := TRUE, Position := 175);
+	fbMoveY(Axis := fbAxisY, Execute := TRUE, Position := 175);
+	IF fbMoveX.Done AND fbMoveY.Done THEN nState := 43; END_IF
+	43:
+	fbMoveX(Axis := fbAxisXa, Execute := FALSE);
+	fbMoveY(Axis := fbAxisY, Execute := FALSE);
+	IF fbTriggerStop.Q THEN nState := 50; END_IF
+	50:
+	// Gear Out X
+	fbGearInX(Master := fbAxisXa, Slave := fbAxisXb, Execute := FALSE);
+	fbGearOutX(Slave := fbAxisXb, Execute := TRUE);
+	IF fbGearOutX.Done THEN nState := 60; END_IF
+	60:
+	// Return To Idle
+	nState := 0;
+END_CASE
+
+fbPowerXa(Axis := fbAxisXa);
+fbPowerXb(Axis := fbAxisXb);
+fbPowerY(Axis := fbAxisY);
+fbPowerZ(Axis := fbAxisZ);
+
+fbResetXa(Axis := fbAxisXa);
+fbResetXb(Axis := fbAxisXb);
+fbResetY(Axis := fbAxisY);
+fbResetZ(Axis := fbAxisZ);
+
+fbHomeX(Axis := fbAxisXa);
+fbHomeY(Axis := fbAxisY);
+fbResetZ(Axis := fbAxisZ);
+
+fbGearInX(Master := fbAxisXa, Slave := fbAxisXb);
+fbGearOutX(Slave := fbAxisXb);]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="62" Count="0" />
@@ -77,23 +152,61 @@ END_CASE*)]]></ST>
       <LineId Id="78" Count="0" />
       <LineId Id="77" Count="0" />
       <LineId Id="82" Count="2" />
-      <LineId Id="80" Count="0" />
       <LineId Id="65" Count="0" />
-      <LineId Id="2" Count="0" />
-      <LineId Id="66" Count="1" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="214" Count="0" />
       <LineId Id="15" Count="0" />
       <LineId Id="14" Count="0" />
       <LineId Id="17" Count="0" />
+      <LineId Id="181" Count="0" />
+      <LineId Id="149" Count="2" />
+      <LineId Id="147" Count="1" />
+      <LineId Id="163" Count="2" />
+      <LineId Id="162" Count="0" />
+      <LineId Id="166" Count="0" />
       <LineId Id="19" Count="0" />
       <LineId Id="68" Count="1" />
-      <LineId Id="71" Count="0" />
-      <LineId Id="28" Count="0" />
-      <LineId Id="74" Count="0" />
-      <LineId Id="72" Count="1" />
-      <LineId Id="20" Count="1" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="22" Count="1" />
+      <LineId Id="139" Count="0" />
+      <LineId Id="141" Count="0" />
+      <LineId Id="140" Count="0" />
+      <LineId Id="167" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="171" Count="0" />
+      <LineId Id="182" Count="0" />
+      <LineId Id="173" Count="2" />
+      <LineId Id="172" Count="0" />
+      <LineId Id="176" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="183" Count="0" />
+      <LineId Id="217" Count="0" />
+      <LineId Id="122" Count="0" />
+      <LineId Id="168" Count="1" />
+      <LineId Id="184" Count="0" />
+      <LineId Id="170" Count="0" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="177" Count="3" />
+      <LineId Id="224" Count="13" />
+      <LineId Id="215" Count="0" />
+      <LineId Id="185" Count="1" />
+      <LineId Id="218" Count="0" />
+      <LineId Id="187" Count="3" />
+      <LineId Id="23" Count="0" />
       <LineId Id="11" Count="0" />
+      <LineId Id="193" Count="0" />
+      <LineId Id="192" Count="0" />
+      <LineId Id="194" Count="0" />
+      <LineId Id="196" Count="0" />
+      <LineId Id="200" Count="0" />
+      <LineId Id="202" Count="0" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="203" Count="1" />
+      <LineId Id="197" Count="0" />
+      <LineId Id="206" Count="0" />
+      <LineId Id="205" Count="0" />
+      <LineId Id="207" Count="1" />
+      <LineId Id="210" Count="0" />
+      <LineId Id="209" Count="0" />
+      <LineId Id="211" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
