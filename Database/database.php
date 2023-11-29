@@ -27,7 +27,7 @@ function voegRekToe($rekID, $rekNaam) {
 }
 
 // Functie om een product toe te voegen
-function voegProductToe($productID, $productNaam, $rekID, $hoeveelheid) {
+function voegProductToe($productID, $productNaam, $rekID, $Stock, $minimaleVoorraad) {
     global $servername, $username, $password, $dbname_rek;
 
     $conn = new mysqli($servername, $username, $password, $dbname_rek);
@@ -53,7 +53,7 @@ function voegProductToe($productID, $productNaam, $rekID, $hoeveelheid) {
             $nieuwRekID = $rowAnderRek["RekID"];
 
             // Voeg het product toe aan het andere rek
-            $sql = "INSERT INTO Product (ProductID, ProductNaam, RekID, Hoeveelheid, IsLeeg) VALUES ('$productID', '$productNaam', '$nieuwRekID', '$hoeveelheid', FALSE)";
+            $sql = "INSERT INTO Product (ProductID, ProductNaam, RekID, Stock, minimaleVoorraad, IsLeeg) VALUES ('$productID', '$productNaam', '$nieuwRekID', '$Stock', '$minimaleVoorraad',  FALSE)";
             $conn->query($sql);
 
             // Werk het aantal producten in het nieuwe rek bij
@@ -66,7 +66,7 @@ function voegProductToe($productID, $productNaam, $rekID, $hoeveelheid) {
         }
     } else {
         // Voeg het product toe aan het huidige rek
-        $sql = "INSERT INTO Product (ProductID, ProductNaam, RekID, Hoeveelheid, IsLeeg) VALUES ('$productID', '$productNaam', '$rekID', '$hoeveelheid', FALSE)";
+        $sql = "INSERT INTO Product (ProductID, ProductNaam, RekID, Stock, IsLeeg) VALUES ('$productID', '$productNaam', '$rekID', '$Stock', FALSE)";
         $conn->query($sql);
 
         // Werk het aantal producten in het huidige rek bij
@@ -79,7 +79,7 @@ function voegProductToe($productID, $productNaam, $rekID, $hoeveelheid) {
     $conn->close();
 }
 // Functie om een order toe te voegen
-function plaatsOrder($orderID, $rekID, $productID, $hoeveelheid) {
+function plaatsOrder($orderID, $rekID, $productID, $Stock) {
     global $servername, $username, $password, $dbname_order, $dbname_rek;
 
     $connOrder = new mysqli($servername, $username, $password, $dbname_order);
@@ -90,27 +90,34 @@ function plaatsOrder($orderID, $rekID, $productID, $hoeveelheid) {
     }
 
     // Haal de productnaam op
-    $getProductNameSql = "SELECT ProductNaam FROM RekDatabase.Product WHERE ProductID = '$productID'";
+    $getProductNameSql = "SELECT ProductNaam, Stock, MinimaleVoorraad  FROM RekDatabase.Product WHERE ProductID = '$productID'";
     $resultProductName = $connOrder->query($getProductNameSql);
     $rowProductName = $resultProductName->fetch_assoc();
     $productNaam = $rowProductName["ProductNaam"];
+	$huidigeVoorraad = $rowProductInfo["Stock"];
+    $minimaleVoorraad = $rowProductInfo["MinimaleVoorraad"];
 
     // Voeg de order toe
-    $sqlOrder = "INSERT INTO OrderTabel (OrderID, RekID, ProductID, ProductNaam, Hoeveelheid) VALUES ('$orderID', '$rekID', '$productID', '$productNaam', '$hoeveelheid')";
+    $sqlOrder = "INSERT INTO OrderTabel (OrderID, RekID, ProductID, ProductNaam, Stock) VALUES ('$orderID', '$rekID', '$productID', '$productNaam', '$Stock')";
     if ($connOrder->query($sqlOrder) === TRUE) {
         echo "Order succesvol geplaatst.";
 
-        // Werk de hoeveelheid van het product bij in de Product-tabel
-        $updateProductSql = "UPDATE RekDatabase.Product SET Hoeveelheid = Hoeveelheid - '$hoeveelheid' WHERE ProductID = '$productID'";
+        // Werk de Stock van het product bij in de Product-tabel
+        $updateProductSql = "UPDATE RekDatabase.Product SET Stock = Stock - '$Stock' WHERE ProductID = '$productID'";
         $connRek->query($updateProductSql);
+		
+		// Controleer of de voorraad onder het minimale niveau is en toon een melding
+        if (($huidigeVoorraad - $Stock) < $minimaleVoorraad) {
+            echo "Let op: De voorraad van $productNaam is onder het minimale niveau gekomen!";
+        }
 
         // Controleer of het product leeg is en verwijder het indien nodig uit het rek
-        $checkEmptySql = "SELECT Hoeveelheid FROM RekDatabase.Product WHERE ProductID = '$productID'";
+        $checkEmptySql = "SELECT Stock FROM RekDatabase.Product WHERE ProductID = '$productID'";
         $resultEmpty = $connRek->query($checkEmptySql);
         $rowEmpty = $resultEmpty->fetch_assoc();
-        $hoeveelheidNaOrder = $rowEmpty["Hoeveelheid"];
+        $StockNaOrder = $rowEmpty["Stock"];
 
-        if ($hoeveelheidNaOrder <= 0) {
+        if ($StockNaOrder <= 0) {
             // Verwijder het product uit het rek
             $deleteProductSql = "DELETE FROM RekDatabase.Product WHERE ProductID = '$productID'";
             $connRek->query($deleteProductSql);
