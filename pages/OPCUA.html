@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazijn</title>
+</head>
+<body style="background-color:#0D1117; color:#E6EDF3;">
+    <img src="/3EAI-IA-2324-Magazijn/Documentation/Magazijn.png" alt="OPCUA">
+    <hr>
+    <ul>
+        <li>OPC UA Integration</li>
+        <p>OPC UA (Object Linking and Embedding for Process Control Unified Architecture) is used for seamless communication between different components in the smart stock system.</p>
+        <p>OPC UA supports two communication paradigms: Publish-Subscribe (Pub/Sub) and Client-Server.</p>
+        <p><strong>Components Using OPC UA:</strong></p>
+        <ul>
+            <li>Import, Picker, Rek, Auto Restock, Production Hal</li>
+            <p>These components act as OPC UA Clients or Servers to exchange information about product movement, orders, and processing requests.</p>
+            <li>Local DB, Storage DB, Order DB</li>
+            <p>These databases implement OPC UA Servers to provide and receive data related to product storage, orders, and inventory.</p>
+            <li>Website</li>
+            <p>The website integrates an OPC UA client to interact with the databases, providing real-time information on stored products, manual export options, and order placement.</p>
+        </ul>
+        <p>OPC UA MOM (Message Oriented Middleware) facilitates the Pub/Sub functionality, enabling efficient and scalable communication.</p>
+    </ul>
+    <hr>
+    <p>The storage can be simulated using the XYZ-table, with the head moving between Import, Storage, and Export locations, controlled by OPC UA commands.</p>
+    <p>For databases, InfluxDB is used on Raspberry Pi instances, each serving as an OPC UA Server. The website, hosted on the same Raspberry Pi, interacts with these databases through OPC UA.</p>
+    <p>Caddy is the chosen web server to host the website, ensuring a smooth user interface for manual interactions.</p>
+    <p>With OPC UA facilitating communication, the system achieves interoperability, real-time data exchange, and efficient control of product flow within the smart stock environment.</p>
+</body>
+</html>
