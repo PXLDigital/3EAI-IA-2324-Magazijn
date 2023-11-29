@@ -1,0 +1,15 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/3EAI-IA-2324-Magazijn/Virtualization/Unreal/IA_Magazijn_VT/Content/IndustryPropsPack6/Maps/Showcase.umap",
+				"D:/3EAI-IA-2324-Magazijn/Virtualization/Unreal/IA_Magazijn_VT/Content/IndustryPropsPack6/Maps/Magazijn.umap",
+				"D:/3EAI-IA-2324-Magazijn/Virtualization/Unreal/IA_Magazijn_VT/Content/IndustryPropsPack6/Maps/Overview.umap",
+				"D:/3EAI-IA-2324-Magazijn/Virtualization/Unreal/IA_Magazijn_VT/Content/IndustryPropsPack6/Meshes/SM_Rack02.uasset"
+			]
+		}
+	]
+}
