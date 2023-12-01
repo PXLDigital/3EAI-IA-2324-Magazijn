@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.42">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.50">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000035}" TcBaseType="true" HideType="true">UINTARR2</Name>
@@ -2163,15 +2163,11 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{CDDBA5F0-25BA-4FD7-891E-87145435A1E4}" Name="XYZ" PrjFilePath="XYZ\XYZ.plcproj" TmcFilePath="XYZ\XYZ.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="XYZ\XYZ.tmc" TmcHash="{3F265975-CB6A-6ACB-014B-3CDDEA78C859}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="XYZ\XYZ.tmc" TmcHash="{3F557755-44FE-DB18-7905-2EDD42ABD2EE}">
 					<Name>XYZ Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
-						<Var>
-							<Name>MAIN.btn</Name>
-							<Type>BOOL</Type>
-						</Var>
 						<Var>
 							<Name>MAIN.bLimitSwitchX</Name>
 							<Comment><![CDATA[ Aixs Limit Switches]]></Comment>
@@ -2223,7 +2219,7 @@ External Setpoint Generation:
 					</Vars>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
+							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
 								<OTCID>#x02010030</OTCID>
@@ -2239,21 +2235,6 @@ External Setpoint Generation:
 			</Project>
 		</Plc>
 		<Io>
-			<Device Id="1" DevType="112" AmsPort="28673" AmsNetId="5.13.205.176.2.1" RemoteName="Device 1 (EtherCAT Automation Protocol)">
-				<Name>Device 1 (EtherCAT Automation Protocol)</Name>
-				<AddressInfo>
-					<Pnp>
-						<DeviceDesc>PCI\TcI8254x2</DeviceDesc>
-						<DeviceName>PCI\TCI8254X2</DeviceName>
-						<DeviceData>0001050dcdb1</DeviceData>
-					</Pnp>
-				</AddressInfo>
-				<Image Id="1" AddrType="1" ImageType="3">
-					<Name>Image</Name>
-				</Image>
-				<Ethernet DeviceDesc="PCI\TcI8254x2"/>
-				<Eap EapDeviceGuid="{AB0A1662-1A9E-4DC1-965F-0B3F03CF6213}"/>
-			</Device>
 			<Device Id="3" DevType="111" DevFlags="#x0003" AmsPort="28675" AmsNetId="5.13.205.176.4.1" RemoteName="Device 3 (EtherCAT)" InfoImageId="3">
 				<Name>Device 3 (EtherCAT)</Name>
 				<AddressInfo>
@@ -4389,12 +4370,24 @@ External Setpoint Generation:
 		</OwnerA>
 		<OwnerA Name="TIPC^XYZ^XYZ Instance">
 			<OwnerB Name="TIID^Device 3 (EtherCAT)^Term 1 (EK1100)^Term 6 (EL1008)">
+				<Link VarA="PlcTask Inputs^MAIN.bLimitSwitchX" VarB="Channel 3^Input"/>
 				<Link VarA="PlcTask Inputs^MAIN.bLimitSwitchY" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^MAIN.btn" VarB="Channel 5^Input"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^X1">
+				<Link VarA="PlcTask Inputs^MAIN.fbAxisXa.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^MAIN.fbAxisXa.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^X2">
+				<Link VarA="PlcTask Inputs^MAIN.fbAxisXb.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^MAIN.fbAxisXb.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Y">
 				<Link VarA="PlcTask Inputs^MAIN.fbAxisY.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^MAIN.fbAxisY.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Z">
+				<Link VarA="PlcTask Inputs^MAIN.fbAxisZ.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^MAIN.fbAxisZ.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

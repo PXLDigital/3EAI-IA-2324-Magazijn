@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_StorageController" Id="{56b98f11-1a3e-4c05-b59d-e5be5b312c4f}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_StorageController
+VAR_INPUT
+	bStart : BOOL; // Start the FB, power, home, ect.
+	bInput : BOOL; // Set command as moving from the INPUT
+	bOutput : BOOL; // Set command as moving to the OUTPUT
+	bExecute : BOOL; // Start executing the current command
+	nStorageLocation: BYTE; // Set command storage location
+	
+END_VAR
+VAR_OUTPUT
+	bReady : BOOL; // The FB is ready
+	bBusy : BOOL; // The FB is executing a command
+	bError : BOOL; // The FB is in ERROR state
+	bDone : BOOL; // The FB has finished executing its command
+	sError : STRING(255); // The FB ERROR description
+	
+END_VAR
+VAR
+	fbTriggerStart : R_TRIG;
+	fbTriggerExecute : R_TRIG;
+	
+	// Axis REF
+	fbAxisXa: AXIS_REF;
+	fbAxisXb: AXIS_REF;
+	fbAxisY:  AXIS_REF;
+	fbAxisZ:  AXIS_REF;
+	// Axis Power
+	fbPowerXa : MC_Power;
+	fbPowerXb : MC_Power;
+	fbPowerY  : MC_Power;
+	fbPowerZ  : MC_Power;
+	// Axis Reset
+	fbResetXa : MC_Reset;
+	fbResetXb : MC_Reset;
+	fbResetY  : MC_Reset;
+	fbResetZ  : MC_Reset;
+	// Axis Home
+	fbHomeX : MC_Home;
+	fbHomeY : MC_Home;
+	fbHomeZ : MC_StepBlock;
+	// Axis Gearing
+	fbGearInX  : MC_GearIn;
+	fbGearOutX : MC_GearOut;
+	// Axis Move
+	fbMoveX : MC_MoveAbsolute;
+	fbMoveY : MC_MoveAbsolute;
+	fbMoveZ : MC_MoveAbsolute;
+	// Aixs Limit Switches
+	bLimitSwitchX AT %I* : BOOL;
+	bLimitSwitchY AT %I* : BOOL;
+	bLimitSwitchZ AT %I* : BOOL;
+	// Step Block Parameters
+	fbHomeParametersZ : MC_HomingParameter;
+	
+	nState : BYTE;
+	
+END_VAR
+VAR CONSTANT
+	cStorageLocationCount : BYTE := 2; // The amount of storage locations
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Get Axis Status
+fbAxisXa.ReadStatus();
+fbAxisXb.ReadStatus();
+fbAxisY.ReadStatus();
+fbAxisZ.ReadStatus();
+
+// Check for errors
+IF bInput AND bOutput THEN
+	bError := TRUE;
+	sError := 'Input and Output may not be active at the same time.';
+	RETURN;
+END_IF
+
+IF nStorageLocation > cStorageLocationCount THEN
+	bError := TRUE;
+	sError := 'Storage loacation is out of range.';
+	RETURN;
+END_IF
+
+IF bExecute AND NOT bReady THEN
+	bError := TRUE;
+	sError := 'The FB is not ready.';
+	RETURN;
+END_IF
+
+// Reset error
+bError := FALSE;
+sError := '';
+
+// Get Triggers
+fbTriggerStart(CLK := bStart);
+fbTriggerExecute(CLK := bExecute);
+
+// Step Through States
+CASE nState OF
+	000: // Idle
+	fbPowerXa.Enable := FALSE;
+	fbPowerXb.Enable := FALSE;
+	fbPowerY.Enable := FALSE;
+	fbPowerZ.Enable := FALSE;
+	
+	fbResetXa.Execute := FALSE;
+	fbResetXb.Execute := FALSE;
+	fbResetY.Execute := FALSE;
+	fbResetZ.Execute := FALSE;
+	
+	fbHomeX.Execute := FALSE;
+	fbHomeY.Execute := FALSE;
+	fbHomeZ.Execute := FALSE;
+	
+	fbGearInX.Execute := FALSE;
+	fbGearOutX.Execute := FALSE;
+	
+	bReady := FALSE;
+	bBusy := FALSE;
+	bDone := FALSE;
+	
+	IF fbTriggerStart.Q THEN
+		bBusy := TRUE;
+		nState := 010;
+	END_IF
+	010: // Power
+	fbPowerXa.Enable := TRUE;
+	fbPowerXb.Enable := TRUE;
+	fbPowerY.Enable := TRUE;
+	fbPowerZ.Enable := TRUE;
+	
+	IF fbPowerXa.Status AND fbPowerXb.Status AND fbPowerY.Status AND fbPowerZ.Status THEN nState := 020; END_IF
+	020: // Couple
+	IF NOT fbGearInX.InGear THEN
+		fbGearInX.Execute := TRUE;
+	ELSE
+		nState := 030;
+	END_IF
+	030: // Home
+	fbHomeX.Execute := TRUE;
+	fbHomeY.Execute := TRUE;
+	fbHomeZ.Execute := TRUE;
+	
+	IF fbHomeX.Done AND fbHomeY.Done AND fbHomeZ.Done THEN nState := 040; END_IF
+	040: // Ready
+	bReady := TRUE;
+	bBusy := FALSE;
+	IF fbTriggerExecute.Q THEN
+		bBusy := TRUE;
+		nState := 050;
+	END_IF
+	050: // Execute command
+	// 060 -> 099 RESERVED
+	100: // Move to halt possition
+	110: // Decouple
+	120: // Depower
+	130: // Return to idle
+END_CASE
+
+fbPowerXa(Axis := fbAxisXa, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100, BufferMode := MC_BlendingPrevious);
+fbPowerXb(Axis := fbAxisXb, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100, BufferMode := MC_BlendingPrevious);
+fbPowerY(Axis := fbAxisY, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100, BufferMode := MC_BlendingPrevious);
+fbPowerZ(Axis := fbAxisZ, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100, BufferMode := MC_BlendingPrevious);
+
+fbResetXa(Axis := fbAxisXa);
+fbResetXb(Axis := fbAxisXb);
+fbResetY(Axis := fbAxisY);
+fbResetZ(Axis := fbAxisZ);
+
+fbHomeX(Axis := fbAxisXa, bCalibrationCam := bLimitSwitchX);
+fbHomeY(Axis := fbAxisY, bCalibrationCam := bLimitSwitchY);
+fbHomeZ(Axis := fbAxisZ, Parameter := fbHomeParametersZ);
+
+fbGearInX(Master := fbAxisXa, Slave := fbAxisXb);
+fbGearOutX(Slave := fbAxisXb);
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_StorageController">
+      <LineId Id="186" Count="0" />
+      <LineId Id="183" Count="2" />
+      <LineId Id="181" Count="1" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="55" Count="1" />
+      <LineId Id="53" Count="1" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="187" Count="0" />
+      <LineId Id="176" Count="0" />
+      <LineId Id="175" Count="0" />
+      <LineId Id="174" Count="0" />
+      <LineId Id="188" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="146" Count="3" />
+      <LineId Id="151" Count="0" />
+      <LineId Id="150" Count="0" />
+      <LineId Id="152" Count="2" />
+      <LineId Id="159" Count="3" />
+      <LineId Id="166" Count="2" />
+      <LineId Id="201" Count="3" />
+      <LineId Id="177" Count="1" />
+      <LineId Id="206" Count="0" />
+      <LineId Id="215" Count="0" />
+      <LineId Id="207" Count="0" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="170" Count="2" />
+      <LineId Id="169" Count="0" />
+      <LineId Id="179" Count="1" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="190" Count="1" />
+      <LineId Id="194" Count="1" />
+      <LineId Id="189" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="196" Count="4" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="208" Count="3" />
+      <LineId Id="214" Count="0" />
+      <LineId Id="212" Count="0" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="67" Count="3" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="130" Count="15" />
+      <LineId Id="129" Count="0" />
+      <LineId Id="47" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

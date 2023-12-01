@@ -3,15 +3,13 @@
   <POU Name="MAIN" Id="{57b2c4ba-e37a-4e94-b424-6116166e21ce}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	test : R_TRIG;
-	btn AT %I* : BOOL;
-	trigger : bool := false;
-	
 	fbTriggerHome : R_TRIG;
 	fbTriggerStop : R_TRIG;
+	fbTriggerContinue : R_TRIG;
 	
 	bCMDHome : BOOL;
 	bCMDStop : BOOL;
+	bCMDContinue : BOOL;
 	
 	// Axis REF
 	fbAxisXa: AXIS_REF;
@@ -45,6 +43,8 @@ VAR
 	bLimitSwitchZ AT %I* : BOOL;
 	
 	nState : USINT := 0;
+	
+	fbHomeBlock : MC_StepBlock;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -53,13 +53,9 @@ fbAxisXb.ReadStatus();
 fbAxisY.ReadStatus();
 fbAxisZ.ReadStatus();
 
-test(CLK := btn);
-IF test.Q THEN
-	trigger := TRUE;
-END_IF
-
 fbTriggerHome(CLK := bCMDHome);
 fbTriggerStop(CLK := bCMDStop);
+fbTriggerContinue(CLK := bCMDContinue);
 
 CASE nState OF
 	0:
@@ -69,59 +65,76 @@ CASE nState OF
 	fbPowerY(Axis := fbAxisY, Enable := FALSE, Enable_Positive := FALSE, Enable_Negative := FALSE, Override := 0);
 	fbPowerZ(Axis := fbAxisZ, Enable := FALSE, Enable_Positive := FALSE, Enable_Negative := FALSE, Override := 0);
 	
-	fbResetXa(Axis := fbAxisXa, Execute := FALSE);
-	fbResetXb(Axis := fbAxisXb, Execute := FALSE);
-	fbResetY(Axis := fbAxisY, Execute := FALSE);
-	fbResetZ(Axis := fbAxisZ, Execute := FALSE);
+	fbResetXa.Execute := FALSE;
+	fbResetXb.Execute := FALSE;
+	fbResetY.Execute := FALSE;
+	fbResetZ.Execute := FALSE;
 	
-	fbHomeX(Axis := fbAxisXa, Execute := FALSE);
-	fbHomeY(Axis := fbAxisY, Execute := FALSE);
-	fbHomeZ(Axis := fbAxisZ, Execute := FALSE);
+	fbHomeX.Execute := FALSE;
+	fbHomeY.Execute := FALSE;
+	fbHomeZ.Execute := FALSE;
 	
-	fbGearInX(Master := fbAxisXa, Slave := fbAxisXb, Execute := FALSE);
-	fbGearOutX(Slave := fbAxisXb, Execute := FALSE);
+	fbGearInX.Execute := FALSE;
+	fbGearOutX.Execute := FALSE;
 	
-	IF fbTriggerHome.Q THEN nState := 10; END_IF
+	IF fbTriggerHome.Q AND fbTriggerContinue.Q THEN nState := 10; END_IF
 	10:
 	// Enable Power
 	fbPowerXa(Axis := fbAxisXa, Enable := TRUE, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100);
 	fbPowerXb(Axis := fbAxisXb, Enable := TRUE, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100);
 	fbPowerY(Axis := fbAxisY, Enable := TRUE, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100);
 	fbPowerZ(Axis := fbAxisZ, Enable := TRUE, Enable_Positive := TRUE, Enable_Negative := TRUE, Override := 100);
-	IF fbPowerXa.Status AND fbPowerXb.Status AND fbPowerY.Status AND fbPowerZ.Status THEN nState := 20; END_IF
+	IF fbPowerXa.Status AND fbPowerXb.Status AND fbPowerY.Status AND fbPowerZ.Status AND fbTriggerContinue.Q THEN nState := 20; END_IF
 	20:
 	// Gear In X
-	fbGearOutX(Slave := fbAxisXb, Execute := FALSE);
-	fbGearInX(Master := fbAxisXa, Slave := fbAxisXb, Execute := TRUE);
-	IF fbGearInX.InGear THEN nState := 30; END_IF
+	IF NOT fbGearInX.InGear THEN
+		fbGearInX.Execute := TRUE;
+	END_IF
+	IF fbGearInX.InGear AND fbTriggerContinue.Q THEN nState := 30; END_IF
 	30:
 	// Home
 	fbHomeX(Axis := fbAxisXa, Execute := TRUE, bCalibrationCam := bLimitSwitchX);
 	fbHomeY(Axis := fbAxisY, Execute := TRUE, bCalibrationCam := bLimitSwitchY);
 //	fbHomeZ(Axis := fbAxisZ, Execute := TRUE, bCalibrationCam := bLimitSwitchZ);
-	IF fbHomeX.Done AND fbHomeY.Done (*AND fbHomeZ.Done*) THEN nState := 40; END_IF
+	IF fbHomeX.Done AND fbHomeY.Done (*AND fbHomeZ.Done*) AND fbTriggerContinue.Q THEN nState := 40; END_IF
 	40:
 	// Ready
-	fbMoveX(Axis := fbAxisXa, Execute := TRUE, Position := 50);
-	fbMoveY(Axis := fbAxisY, Execute := TRUE, Position := 120);
-	IF fbMoveX.Done AND fbMoveY.Done THEN nState := 41; END_IF
+	fbMoveX(Axis := fbAxisXa, Execute := TRUE, Position := 50, Velocity := 10);
+	fbMoveY(Axis := fbAxisY, Execute := TRUE, Position := 120, Velocity := 10);
+	IF NOT (fbMoveX.Active OR fbMoveY.Active) THEN
+		nState := 41;
+		fbMoveX(Axis := fbAxisXa, Execute := FALSE);
+		fbMoveY(Axis := fbAxisY, Execute := FALSE);
+	END_IF
 	41:
-	fbMoveX(Axis := fbAxisXa, Execute := TRUE, Position := 50);
-	fbMoveY(Axis := fbAxisY, Execute := TRUE, Position := 10);
-	IF fbMoveX.Done AND fbMoveY.Done THEN nState := 42; END_IF
+	fbMoveX(Axis := fbAxisXa, Execute := TRUE, Position := 50, Velocity := 10);
+	fbMoveY(Axis := fbAxisY, Execute := TRUE, Position := 10, Velocity := 10);
+	IF NOT (fbMoveX.Active OR fbMoveY.Active) THEN
+		nState := 42;
+		fbMoveX(Axis := fbAxisXa, Execute := FALSE);
+		fbMoveY(Axis := fbAxisY, Execute := FALSE);
+	END_IF
 	42:
-	fbMoveX(Axis := fbAxisXa, Execute := TRUE, Position := 175);
-	fbMoveY(Axis := fbAxisY, Execute := TRUE, Position := 175);
-	IF fbMoveX.Done AND fbMoveY.Done THEN nState := 43; END_IF
+	fbMoveX(Axis := fbAxisXa, Execute := TRUE, Position := 175, Velocity := 10);
+	fbMoveY(Axis := fbAxisY, Execute := TRUE, Position := 175, Velocity := 10);
+	IF NOT (fbMoveX.Active OR fbMoveY.Active) THEN
+		nState := 43;
+		fbMoveX(Axis := fbAxisXa, Execute := FALSE);
+		fbMoveY(Axis := fbAxisY, Execute := FALSE);
+	END_IF
 	43:
 	fbMoveX(Axis := fbAxisXa, Execute := FALSE);
 	fbMoveY(Axis := fbAxisY, Execute := FALSE);
-	IF fbTriggerStop.Q THEN nState := 50; END_IF
+	//nState := 50;
 	50:
 	// Gear Out X
-	fbGearInX(Master := fbAxisXa, Slave := fbAxisXb, Execute := FALSE);
-	fbGearOutX(Slave := fbAxisXb, Execute := TRUE);
-	IF fbGearOutX.Done THEN nState := 60; END_IF
+	IF fbGearInX.InGear THEN
+		fbGearInX.Execute := FALSE;
+	END_IF
+	IF NOT fbGearInX.InGear THEN
+		fbGearOutX.Execute := TRUE;
+	END_IF
+	IF fbGearOutX.Done AND (NOT fbGearInX.InGear) AND fbTriggerContinue.Q THEN nState := 60; END_IF
 	60:
 	// Return To Idle
 	nState := 0;
@@ -148,18 +161,16 @@ fbGearOutX(Slave := fbAxisXb);]]></ST>
       <LineId Id="62" Count="0" />
       <LineId Id="64" Count="0" />
       <LineId Id="63" Count="0" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="78" Count="0" />
-      <LineId Id="77" Count="0" />
-      <LineId Id="82" Count="2" />
+      <LineId Id="84" Count="0" />
       <LineId Id="65" Count="0" />
       <LineId Id="67" Count="0" />
       <LineId Id="214" Count="0" />
+      <LineId Id="330" Count="0" />
       <LineId Id="15" Count="0" />
       <LineId Id="14" Count="0" />
       <LineId Id="17" Count="0" />
       <LineId Id="181" Count="0" />
-      <LineId Id="149" Count="2" />
+      <LineId Id="320" Count="2" />
       <LineId Id="147" Count="1" />
       <LineId Id="163" Count="2" />
       <LineId Id="162" Count="0" />
@@ -173,23 +184,37 @@ fbGearOutX(Slave := fbAxisXb);]]></ST>
       <LineId Id="20" Count="0" />
       <LineId Id="171" Count="0" />
       <LineId Id="182" Count="0" />
-      <LineId Id="173" Count="2" />
+      <LineId Id="316" Count="2" />
       <LineId Id="172" Count="0" />
       <LineId Id="176" Count="0" />
       <LineId Id="21" Count="0" />
       <LineId Id="183" Count="0" />
-      <LineId Id="217" Count="0" />
+      <LineId Id="331" Count="0" />
       <LineId Id="122" Count="0" />
+      <LineId Id="332" Count="0" />
       <LineId Id="168" Count="1" />
       <LineId Id="184" Count="0" />
       <LineId Id="170" Count="0" />
       <LineId Id="123" Count="0" />
       <LineId Id="177" Count="3" />
-      <LineId Id="224" Count="13" />
+      <LineId Id="224" Count="1" />
+      <LineId Id="337" Count="0" />
+      <LineId Id="341" Count="0" />
+      <LineId Id="338" Count="0" />
+      <LineId Id="340" Count="0" />
+      <LineId Id="339" Count="0" />
+      <LineId Id="227" Count="2" />
+      <LineId Id="342" Count="3" />
+      <LineId Id="230" Count="3" />
+      <LineId Id="346" Count="3" />
+      <LineId Id="234" Count="3" />
       <LineId Id="215" Count="0" />
       <LineId Id="185" Count="1" />
-      <LineId Id="218" Count="0" />
-      <LineId Id="187" Count="3" />
+      <LineId Id="334" Count="0" />
+      <LineId Id="354" Count="0" />
+      <LineId Id="335" Count="0" />
+      <LineId Id="355" Count="2" />
+      <LineId Id="188" Count="2" />
       <LineId Id="23" Count="0" />
       <LineId Id="11" Count="0" />
       <LineId Id="193" Count="0" />
