@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GlobalSettings" Id="{5b3e820d-6ef7-4a19-9b24-03bac8067f29}">
+    <Declaration><![CDATA[// Beckhoff Sample
+VAR_GLOBAL
+	sOpcUaServerUrl : STRING(MAX_STRING_LENGTH) := 'opc.tcp://PF2ADX8V:53530/OPCUA/SimulationServer'; // opc.tcp://localhost:4840 // opc.tcp://PF2ADX8V:53530/OPCUA/SimulationServer
+	sNamespaceUri : STRING(MAX_STRING_LENGTH) := 'urn:PF2ADX8V:OPCUA:SimulationServer'; // TF6100 setup version 4.x default // urn:BeckhoffAutomation:Ua:PLC1 // urn:PF2ADX8V:OPCUA:SimulationServer
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -18,10 +18,20 @@
     <LibraryReferences>{e22a74a7-abc5-4779-9378-af9ca7f7ceeb}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GVLs\GlobalSettings.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_StorageController.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_WRITE.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -44,9 +54,17 @@
       <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_System</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_MC2_AdvancedHoming">
+      <DefaultResolution>Tc3_MC2_AdvancedHoming, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_MC2_AdvancedHoming</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Module">
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_PLCopen_OpcUa">
+      <DefaultResolution>Tc3_PLCopen_OpcUa, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_PLCopen_OpcUa</Namespace>
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
