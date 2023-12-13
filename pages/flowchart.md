@@ -5,7 +5,7 @@
 Magazijn
 
 
-![Flowchart](Pictures/Magazijn.png)
+![Flowchart](Pictures/Flowchart.png)
 
 
 ---
