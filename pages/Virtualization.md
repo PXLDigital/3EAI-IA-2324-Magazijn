@@ -21,7 +21,7 @@ Unreal Engine 5 seamlessly integrates with Industry 4.0 principles, providing a 
 ## **My Work**
 ### **The Warehouse**
 
-![MAgazijn in Unreal Engine 5](Pictures/magazijn.PNG)
+![Magazijn in Unreal Engine 5](Pictures/magazijn.PNG)
 
 Welcome to the virtual warehouse workspace, a dynamic environment where an array of cabinets is meticulously organized with various materials. This digital haven serves as the hub for simulating and visualizing potential rearrangements of both cabinets and the materials they house. The seamless integration of cutting-edge technology allows for a comprehensive exploration of different configurations and optimizations.
 
