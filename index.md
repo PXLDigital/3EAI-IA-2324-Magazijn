@@ -1,6 +1,6 @@
 # Documentatie
 
-In de onderstaande links vind je de documentatie voor ieder deel.
+In de onderstaande links vind je de documentatie.
 
 ### [Flowchart Documentatie](flowchart.md)
 ### [Website Documentatie](Website.md)
