@@ -7,15 +7,25 @@ VAR
 	bStart : BOOL;
 	fbStartTrigger : R_TRIG;
 	fbConnectOPCUA : UA_Connect;
+	
+	// https://www.dmcinfo.com/latest-thinking/blog/id/10396/getting-started-with-opc-ua-in-beckhoff-twincat-3
+	{attribute 'OPC.UA.DA' := '1'}
+    hi:BOOL;
+    timer: ton;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbStartTrigger(CLK := bStart);
-fbConnectOPCUA(Execute := bStart, ServerUrl := 'opc.tcp://PF2ADX8V:53530/OPCUA/SimulationServer', Timeout := T#5S);]]></ST>
+      <ST><![CDATA[//PRG_WRITE();
+
+timer(IN := NOT timer.Q, PT := T#1S) ;
+IF timer.Q THEN
+    hi := NOT hi;
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="211" Count="0" />
       <LineId Id="406" Count="0" />
+      <LineId Id="419" Count="3" />
+      <LineId Id="418" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

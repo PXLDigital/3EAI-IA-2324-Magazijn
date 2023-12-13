@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.33403.129
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{B1E792BE-AA5F-4E3C-8C82-674BF9C0715B}") = "XYZ", "XYZ\XYZ.tsproj", "{1EEDFF6C-0483-4A86-8A51-68358DA9A47C}"
 EndProject
+Project("{BACAAE27-5D5D-4513-97FF-0FED82FEF961}") = "TwinCATConnectivity", "TwinCATConnectivity\TwinCATConnectivity.tcconnproj", "{D20D7D3B-65CB-4DC2-B2EE-3952005295AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|TwinCAT CE7 (ARMV7) = Debug|TwinCAT CE7 (ARMV7)
@@ -49,6 +51,14 @@ Global
 		{CDDBA5F0-25BA-4FD7-891E-87145435A1E4}.Release|TwinCAT RT (x64).Build.0 = Release|TwinCAT RT (x64)
 		{CDDBA5F0-25BA-4FD7-891E-87145435A1E4}.Release|TwinCAT RT (x86).ActiveCfg = Release|TwinCAT RT (x86)
 		{CDDBA5F0-25BA-4FD7-891E-87145435A1E4}.Release|TwinCAT RT (x86).Build.0 = Release|TwinCAT RT (x86)
+		{D20D7D3B-65CB-4DC2-B2EE-3952005295AA}.Debug|TwinCAT CE7 (ARMV7).ActiveCfg = Debug|TwinCAT CE7 (ARMV7)
+		{D20D7D3B-65CB-4DC2-B2EE-3952005295AA}.Debug|TwinCAT OS (ARMT2).ActiveCfg = Debug|TwinCAT OS (ARMT2)
+		{D20D7D3B-65CB-4DC2-B2EE-3952005295AA}.Debug|TwinCAT RT (x64).ActiveCfg = Debug|TwinCAT RT (x64)
+		{D20D7D3B-65CB-4DC2-B2EE-3952005295AA}.Debug|TwinCAT RT (x86).ActiveCfg = Debug|TwinCAT RT (x86)
+		{D20D7D3B-65CB-4DC2-B2EE-3952005295AA}.Release|TwinCAT CE7 (ARMV7).ActiveCfg = Release|TwinCAT CE7 (ARMV7)
+		{D20D7D3B-65CB-4DC2-B2EE-3952005295AA}.Release|TwinCAT OS (ARMT2).ActiveCfg = Release|TwinCAT OS (ARMT2)
+		{D20D7D3B-65CB-4DC2-B2EE-3952005295AA}.Release|TwinCAT RT (x64).ActiveCfg = Release|TwinCAT RT (x64)
+		{D20D7D3B-65CB-4DC2-B2EE-3952005295AA}.Release|TwinCAT RT (x86).ActiveCfg = Release|TwinCAT RT (x86)
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

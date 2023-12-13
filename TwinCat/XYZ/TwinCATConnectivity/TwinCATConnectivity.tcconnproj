@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="10.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{d20d7d3b-65cb-4dc2-b2ee-3952005295aa}</ProjectGuid>
+    <AssemblyName>TwinCATConnectivity</AssemblyName>
+    <Name>TwinCATConnectivity</Name>
+    <RootNamespace>TwinCATConnectivity</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="TwinCAT OPC UA Server XYZ.tcopcuasrv">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <tcopcuasrvdaCompile Include="TwinCAT OPC UA Server XYZ\Data Access\Data Access.opcuada">
+      <DependentUpon>TwinCAT OPC UA Server XYZ.tcopcuasrv</DependentUpon>
+    </tcopcuasrvdaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <tcopcuasrvalarmcCompile Include="TwinCAT OPC UA Server XYZ\Alarms and Conditions\Alarms and Conditions.ac">
+      <DependentUpon>TwinCAT OPC UA Server XYZ.tcopcuasrv</DependentUpon>
+    </tcopcuasrvalarmcCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <tcopcuasrvresCompile Include="TwinCAT OPC UA Server XYZ\Resources\Resources.res">
+      <DependentUpon>TwinCAT OPC UA Server XYZ.tcopcuasrv</DependentUpon>
+    </tcopcuasrvresCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <tcopcuasrvhaCompile Include="TwinCAT OPC UA Server XYZ\Historical Access\Historical Access.opcuaha">
+      <DependentUpon>TwinCAT OPC UA Server XYZ.tcopcuasrv</DependentUpon>
+    </tcopcuasrvhaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <tcopcuasrvsecCompile Include="TwinCAT OPC UA Server XYZ\Security Access\Security Access.sec">
+      <DependentUpon>TwinCAT OPC UA Server XYZ.tcopcuasrv</DependentUpon>
+    </tcopcuasrvsecCompile>
+  </ItemGroup>
+  <!-- This next bit is required unless the macro used to Import your targets is defined in an MSBuild toolset. -->
+  <ProjectExtensions>
+    <ProjectCapabilities>
+      <ProjectConfigurationsDeclaredAsItems />
+      <TcConnectivity />
+    </ProjectCapabilities>
+  </ProjectExtensions>
+</Project>
