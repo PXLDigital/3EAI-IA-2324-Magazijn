@@ -2,8 +2,8 @@
 
 In de onderstaande links vind je de documentatie.
 
-### [Flowchart Documentatie](flowchart.md)
-### [Website Documentatie](Website.md)
-### [OPC-UA Documentatie](OPCUA.md)
-### [Virtualization Documentatie](Virtualization.md)
+### [Flowchart Documentatie](pages/flowchart.md)
+### [Website Documentatie](pages/Website.md)
+### [OPC-UA Documentatie](pages/OPCUA.md)
+### [Virtualization Documentatie](pages/Virtualization.md)
 ### ...
