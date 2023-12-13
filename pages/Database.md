@@ -141,7 +141,7 @@ To connect, there are 5 variables to configure a connection:
 Several users can be created. The number of privileges and permissions for each user can be decided separately.
 For example the foreman is able to add products or delete products from the database. While the workers are only able to see the contents of the database and are not able to change anything in the database. 
 <br/>
-![Users](#Pictures/users.png)
+![Users](Pictures/users.png)
 ## Auteurs
 - **[Bo Mengels](https://github.com/12003586)** - _CONTRIBUTOR_ - 
 
