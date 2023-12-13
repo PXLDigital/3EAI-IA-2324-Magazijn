@@ -19,4 +19,12 @@ The integration of augmented reality (AR) and virtual reality (VR) capabilities 
 Unreal Engine 5 seamlessly integrates with Industry 4.0 principles, providing a platform for collaborative visualization that goes beyond aesthetics. Its real-time collaboration features, data-driven capabilities, and immersive training simulations position it as a pivotal tool for industries navigating the complexities of Industry 4.0, facilitating informed decision-making, efficient training, and optimized manufacturing processes.
 
 ## **My Work**
+### **The Warehouse**
+
 ![MAgazijn in Unreal Engine 5](Pictures/magazijn.PNG)
+
+Here is The Workspace of the virtual Warehouse where different cabinets are filled with materials. This is then used for simmulating and visualizing possible changes in ordereing of the cabinets an matreials in them.
+for the communication to the real world i use a tcp connection blueprint to recive en send data. 
+
+### **Communication blueprint**
+![Unreal Engine 5 TCP blueprint](Pictures/TCP_connection.PNG)
