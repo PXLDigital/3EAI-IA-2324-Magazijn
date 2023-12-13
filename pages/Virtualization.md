@@ -23,8 +23,13 @@ Unreal Engine 5 seamlessly integrates with Industry 4.0 principles, providing a 
 
 ![MAgazijn in Unreal Engine 5](Pictures/magazijn.PNG)
 
-Here is The Workspace of the virtual Warehouse where different cabinets are filled with materials. This is then used for simmulating and visualizing possible changes in ordereing of the cabinets an matreials in them.
-for the communication to the real world i use a tcp connection blueprint to recive en send data. 
+Welcome to the virtual warehouse workspace, a dynamic environment where an array of cabinets is meticulously organized with various materials. This digital haven serves as the hub for simulating and visualizing potential rearrangements of both cabinets and the materials they house. The seamless integration of cutting-edge technology allows for a comprehensive exploration of different configurations and optimizations.
+
+Within this virtual realm, the intricate interplay between cabinets and materials unfolds, offering a simulated canvas for experimenting with logistical possibilities. This simulation not only streamlines the ordering of cabinets and materials but also enhances efficiency by providing a visual representation of potential changes.
+
+Facilitating the bridge between this virtual realm and the tangible world is a TCP connection blueprint. This blueprint acts as the conduit for the exchange of data, enabling the seamless flow of information between the digital simulation and the real-world warehouse setting. Through this robust communication framework, data is received and sent with precision, ensuring that the virtual workspace remains closely aligned with the dynamic demands of the physical environment.
+
+In essence, the virtual warehouse workspace serves as a powerful tool for strategic planning and logistical foresight, empowering users to make informed decisions by virtually manipulating the organization of cabinets and materials. The incorporation of a robust TCP connection blueprint further exemplifies the commitment to real-world applicability, ensuring that the insights gained in the virtual realm seamlessly translate into tangible improvements in warehouse efficiency and organization.
 
 ### **Communication blueprint**
 ![Unreal Engine 5 TCP blueprint](Pictures/TCP_connection.PNG)
