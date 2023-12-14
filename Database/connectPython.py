@@ -1,36 +1,49 @@
-import pymysql
+import pymysql.cursors
+import time
+from opcua import Client
 
-# Replace these with your actual database connection details
-db_config = {
-    'host': 'your_host',
-    'user': 'your_user',
-    'password': 'your_password',
-    'database': 'your_database',
-}
-
-# Connect to the MySQL server
-conn = pymysql.connect(**db_config)
+# Connect to the database
+connection = pymysql.connect(host='192.168.1.220',
+                             user='Bo',
+                             password='Bo',
+                             database='magazijnDatabase',
+                             cursorclass=pymysql.cursors.DictCursor)
 
 try:
     # Create a cursor object to interact with the database
-    with conn.cursor() as cursor:
+    with connection.cursor() as cursor:
         # Execute a SQL query to select data from a table
-        products = 'SELECT * FROM products'
+        products = 'SELECT * FROM product'
         cursor.execute(products)
-
-        rekken = 'SELECT * FROM rekken'
-        cursor.execute(rekken)
-
-        orders = 'SELECT * FROM ordertable'
-        cursor.execute(orders)
-
         # Fetch all the rows from the result set
-        rows = cursor.fetchall()
+        rowsProducts = cursor.fetchall()
 
         # Print the results
-        for row in rows:
-            print(row)
+        for rowProduct in rowsProducts:
+            print(rowProduct)
 
+        racks = 'SELECT * FROM Rek'
+        cursor.execute(racks)
+        rowsRacks = cursor.fetchall()
+        # Print the results
+        for rowRack in rowsRacks:
+            print(rowRack)
 finally:
     # Close the database connection when done
-    conn.close()
+    connection.close()
+
+url = "opc.tcp://PF2ADX8V:4840/OPCUA/SimulationServer"
+
+client= Client(url)
+
+client.connect()
+print("Client Connected")
+
+while True:
+
+
+    TIME = client.get_node("ns=3;s=RekID")
+    Time = TIME.set_value(rowProduct["ProductID"])
+    #print(Time)
+
+    time.sleep(1)
