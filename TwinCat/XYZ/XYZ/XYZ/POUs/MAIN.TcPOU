@@ -3,6 +3,12 @@
   <POU Name="MAIN" Id="{57b2c4ba-e37a-4e94-b424-6116166e21ce}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	// OPC-UA Test
+	bBool_1 AT %I*: BOOL;
+	bBool_2 AT %Q*: BOOL;
+	nInt_1 AT %I*: INT;
+	nInt_2 AT %Q*: INT;
+	bWriteEnable AT %Q* : BOOL;
 	// OPC/UA
 	bStart : BOOL;
 	fbStartTrigger : R_TRIG;
@@ -19,13 +25,21 @@ END_VAR
 
 timer(IN := NOT timer.Q, PT := T#1S) ;
 IF timer.Q THEN
-    hi := NOT hi;
+	bWriteEnable := TRUE;
+    bBool_2 := NOT bBool_1;
+	nInt_2 := nInt_1 + 1;
+ELSE
+	//bWriteEnable := FALSE;
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="406" Count="0" />
-      <LineId Id="419" Count="3" />
-      <LineId Id="418" Count="0" />
+      <LineId Id="419" Count="2" />
+      <LineId Id="444" Count="0" />
+      <LineId Id="422" Count="0" />
+      <LineId Id="442" Count="0" />
+      <LineId Id="447" Count="1" />
+      <LineId Id="446" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
