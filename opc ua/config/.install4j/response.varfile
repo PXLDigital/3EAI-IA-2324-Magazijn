@@ -1,0 +1,6 @@
+# install4j response file for Prosys OPC UA Simulation Server 5.4.6-148
+createDesktopLinkAction$Boolean=true
+executeLauncherAction$Boolean=true
+sys.adminRights$Boolean=true
+sys.installationDir=C\:\\Program Files\\ProsysOPC\\Prosys OPC UA Simulation Server
+sys.languageId=en

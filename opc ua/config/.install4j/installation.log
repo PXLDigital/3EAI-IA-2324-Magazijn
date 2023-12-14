@@ -1,0 +1,630 @@
+[INFO] Logger started at 2023-11-30 09:17:12
+[INFO] Executable name: C:\Users\Administrator\Downloads\prosys-opc-ua-simulation-server-windows-x64-5.4.6-148.exe
+[INFO] install4j version: 10.0.4 (build 10066)
+[INFO] Properties: 
+-- listing properties --
+java.specification.version=17
+sun.cpu.isalist=amd64
+sun.jnu.encoding=Cp1252
+java.class.path=C:\Users\ADMINI~1\AppData\Local\Temp\...
+sun.awt.enableExtraMouseButtons=true
+java.vm.vendor=Eclipse Adoptium
+sun.arch.data.model=64
+install4j.exeDir=C:\Users\Administrator\Downloads\
+user.variant=
+java.vendor.url=https://adoptium.net/
+user.timezone=Europe/Brussels
+java.vm.specification.version=17
+os.name=Windows 10
+user.country=BE
+sun.boot.library.path=c:\users\admini~1\appdata\local\temp\...
+sun.java.command=C:\Users\Administrator\Downloads\pros...
+jdk.debug=release
+sun.cpu.endian=little
+exe4j.unextractedPosition=48019226
+user.home=C:\Users\Administrator
+user.language=nl
+jdk.http.auth.tunneling.disabledSchemes=
+java.specification.vendor=Oracle Corporation
+java.version.date=2022-10-18
+java.home=c:\users\admini~1\appdata\local\temp\...
+file.separator=\
+java.vm.compressedOopsMode=Zero based
+line.separator=
+
+java.vm.specification.vendor=Oracle Corporation
+java.specification.name=Java Platform API Specification
+jdk.lang.Process.allowAmbiguousCommands=false
+exe4j.moduleName=C:\Users\Administrator\Downloads\pros...
+exe4j.tempDir=C:\Users\ADMINI~1\AppData\Local\Temp\...
+user.script=
+exe4j.consoleCodepage=cp0
+sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+exe4j.isInstall4j=true
+java.runtime.version=17.0.5+8
+user.name=Administrator
+path.separator=;
+os.version=10.0
+java.runtime.name=OpenJDK Runtime Environment
+file.encoding=Cp1252
+java.vm.name=OpenJDK 64-Bit Server VM
+java.vendor.version=Temurin-17.0.5+8
+exe4j.semaphoreName=Local\c:_users_administrator_download...
+install4j.appDir=C:\Users\Administrator\AppData\Local\...
+java.vendor.url.bug=https://github.com/adoptium/adoptium-...
+java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\
+java.version=17.0.5
+user.dir=C:\Users\ADMINI~1\AppData\Local\Temp\...
+os.arch=amd64
+java.vm.specification.name=Java Virtual Machine Specification
+sun.os.patch.level=
+native.encoding=Cp1252
+java.library.path=c:\users\admini~1\appdata\local\temp\...
+java.vm.info=mixed mode
+java.vendor=Eclipse Adoptium
+java.vm.version=17.0.5+8
+sun.io.unicode.encoding=UnicodeLittle
+java.class.version=61.0
+exe4j.launchName=C:\Users\Administrator\Downloads\pros...
+[INFO] Variable changed: sys.resolveUserSpecificInstallationDir=false[class java.lang.String]
+[INFO] com.install4j.runtime.beans.actions.misc.RequestPrivilegesAction [ID 22]: Execute action
+       Property linuxPrivilegeRequirement: None
+       Property failIfNotObtainedLinux: false
+       Property failIfNotObtainedMac: true
+       Property failIfNotObtainedWin: true
+       Property failIfNotRootUnix: false
+       Property obtainIfAdminMac: false
+       Property obtainIfAdminWin: true
+       Property obtainIfNormalMac: false
+       Property obtainIfNormalWin: false
+       Property rollbackSupported: false
+       Property updateInstallationDirectory: true
+       Starting elevated helper
+       Using communication backend com.install4j.runtime.installer.platform.win32.Win32CommunicationBackend
+       Execute action successful after 5299 ms
+[INFO] com.install4j.runtime.beans.screens.StartupScreen [ID 1]: command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.WelcomeScreen [ID 2]: Show screen
+[INFO] com.install4j.runtime.beans.screens.WelcomeScreen [ID 2]: command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.LicenseScreen [ID 887]: Show screen
+[INFO] com.install4j.runtime.beans.screens.LicenseScreen [ID 887]: command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.InstallationDirectoryScreen [ID 8]: Show screen
+       checking writable with maximum
+[INFO] com.install4j.runtime.beans.actions.misc.LoadResponseFileAction [ID 11]: Execute action
+       Property excludedVariables: [sys.installationDir]
+       Property file: null
+       Property overwriteStrategy: Do not overwrite command line
+       Property registerForResponseFile: true
+       Property rollbackSupported: false
+       Response file C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\response.varfile does not exist
+       Execute action successful after 13 ms
+[INFO] com.install4j.runtime.beans.screens.InstallationDirectoryScreen [ID 8]: command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.AdditionalConfirmationsScreen [ID 701]: Show screen
+[INFO] com.install4j.runtime.beans.screens.AdditionalConfirmationsScreen [ID 701]: command: go back 1 screens using history
+[INFO] com.install4j.runtime.beans.screens.InstallationDirectoryScreen [ID 8]: Show screen
+       checking writable with maximum
+[INFO] com.install4j.runtime.beans.actions.misc.LoadResponseFileAction [ID 11]: Execute action
+       Property excludedVariables: [sys.installationDir]
+       Property file: null
+       Property overwriteStrategy: Do not overwrite command line
+       Property registerForResponseFile: true
+       Property rollbackSupported: false
+       Response file C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\response.varfile does not exist
+       Execute action successful after 3 ms
+[INFO] com.install4j.runtime.beans.screens.InstallationDirectoryScreen [ID 8]: command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.AdditionalConfirmationsScreen [ID 701]: Show screen
+       Variable changed: createDesktopLinkAction=true[class java.lang.Boolean]
+[INFO] com.install4j.runtime.beans.screens.AdditionalConfirmationsScreen [ID 701]: command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.InstallationScreen [ID 15]: Show screen
+[INFO] com.install4j.runtime.beans.actions.UninstallPreviousAction [ID 790]: Execute action
+       Property installationDirectory: null
+       Property installerVariables: {}
+       Property logFiles: []
+       Property onlyIfSameApplicationId: true
+       Property rollbackSupported: false
+       Property uninstallServices: true
+       checking running processes
+       checking running processes ok
+       previous installation id at C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server: null
+       no previous installation detected, uninstaller was not started
+       finished
+       Execute action successful after 92 ms
+[INFO] com.install4j.runtime.beans.actions.InstallFilesAction [ID 17]: Execute action
+       Property directoryResolverScript: null
+       Property fileFilterScript: null
+       Property sizeCalculatorScript: null
+       Property acceptAllCertificates: false
+       Property checkFreeSpace: true
+       Property delay: false
+       Property installRuntime: true
+       Property rollbackSupported: true
+       Property saveDownloadedFiles: false
+       Property showFileNames: true
+       Property triggerReboot: true
+       Property validateApplicationId: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-console-l1-1-0.dll; size: 14216 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:05 CET 2023, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, but not for update, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-datetime-l1-1-0.dll; size: 13704 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-debug-l1-1-0.dll; size: 13704 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-errorhandling-l1-1-0.dll; size: 13704 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-file-l1-1-0.dll; size: 17288 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-file-l1-2-0.dll; size: 13704 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-file-l2-1-0.dll; size: 13704 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-handle-l1-1-0.dll; size: 13704 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-heap-l1-1-0.dll; size: 14216 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-interlocked-l1-1-0.dll; size: 13704 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-libraryloader-l1-1-0.dll; size: 14728 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-localization-l1-2-0.dll; size: 16264 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-memory-l1-1-0.dll; size: 14216 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-namedpipe-l1-1-0.dll; size: 13704 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-processenvironment-l1-1-0.dll; size: 14728 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-processthreads-l1-1-0.dll; size: 15752 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-processthreads-l1-1-1.dll; size: 14216 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-profile-l1-1-0.dll; size: 13192 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-rtlsupport-l1-1-0.dll; size: 14216 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-string-l1-1-0.dll; size: 13704 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-synch-l1-1-0.dll; size: 15752 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-synch-l1-2-0.dll; size: 14216 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-sysinfo-l1-1-0.dll; size: 14728 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-timezone-l1-1-0.dll; size: 14216 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-core-util-l1-1-0.dll; size: 13704 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-conio-l1-1-0.dll; size: 14728 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-convert-l1-1-0.dll; size: 17800 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-environment-l1-1-0.dll; size: 14216 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-filesystem-l1-1-0.dll; size: 15752 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-heap-l1-1-0.dll; size: 14728 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-locale-l1-1-0.dll; size: 14216 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-math-l1-1-0.dll; size: 22920 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-multibyte-l1-1-0.dll; size: 21896 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-private-l1-1-0.dll; size: 66440 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-process-l1-1-0.dll; size: 14728 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-runtime-l1-1-0.dll; size: 18312 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:06 CET 2023, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, but not for update, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-stdio-l1-1-0.dll; size: 19848 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-string-l1-1-0.dll; size: 19848 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-time-l1-1-0.dll; size: 16264 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\api-ms-win-crt-utility-l1-1-0.dll; size: 14216 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\attach.dll; size: 29064 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\awt.dll; size: 1481096 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\dt_socket.dll; size: 36232 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\fontmanager.dll; size: 791944 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\freetype.dll; size: 542600 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\instrument.dll; size: 51080 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\j2gss.dll; size: 51080 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\j2pcsc.dll; size: 25992 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\j2pkcs11.dll; size: 78728 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\jaas.dll; size: 28552 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\jabswitch.exe; size: 45448 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\jaccessinspector.exe; size: 106376 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\jaccesswalker.exe; size: 71048 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\java.dll; size: 146312 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\java.exe; size: 50056 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\javaaccessbridge.dll; size: 287624 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\javajpeg.dll; size: 179080 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\javaw.exe; size: 50056 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\jawt.dll; size: 21384 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\jdwp.dll; size: 229768 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\jfr.exe; size: 23944 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\jimage.dll; size: 33672 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\jli.dll; size: 86920 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\jrunscript.exe; size: 23944 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\jsound.dll; size: 60808 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\keytool.exe; size: 23944 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\kinit.exe; size: 23944 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\klist.exe; size: 23944 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\ktab.exe; size: 23944 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\lcms.dll; size: 254856 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\le.dll; size: 35720 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\management.dll; size: 29064 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\management_agent.dll; size: 24456 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\management_ext.dll; size: 35720 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\mlib_image.dll; size: 509832 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\msvcp140.dll; size: 584584 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\net.dll; size: 97160 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\nio.dll; size: 79752 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\prefs.dll; size: 25480 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\rmi.dll; size: 20872 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\rmiregistry.exe; size: 23944 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\server\jvm.dll; size: 12527496 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\splashscreen.dll; size: 218504 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\sspi_bridge.dll; size: 44936 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\sunmscapi.dll; size: 47496 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\ucrtbase.dll; size: 1011592 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\vcruntime140.dll; size: 95624 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\vcruntime140_1.dll; size: 38280 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\verify.dll; size: 54152 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\w2k_lsa_auth.dll; size: 31624 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\windowsaccessbridge-64.dll; size: 72584 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\bin\zip.dll; size: 86920 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\logging.properties; size: 2732 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\management\jmxremote.access; size: 3997 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\management\jmxremote.password.template; size: 5690 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\management\management.properties; size: 14410 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:07 CET 2023, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, but not for update, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\net.properties; size: 6671 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\security\java.policy; size: 2180 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\security\java.security; size: 58403 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\security\policy\limited\default_local.policy; size: 647 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\security\policy\limited\default_US_export.policy; size: 146 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\security\policy\limited\exempt_local.policy; size: 566 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\security\policy\README.txt; size: 2390 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\security\policy\unlimited\default_local.policy; size: 193 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\security\policy\unlimited\default_US_export.policy; size: 146 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\conf\sound.properties; size: 1210 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\classfile_constants.h; size: 22155 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\jawt.h; size: 12458 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\jdwpTransport.h; size: 8151 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\jni.h; size: 75678 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\jvmti.h; size: 84350 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\jvmticmlr.h; size: 4771 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\sizecalc.h; size: 4518 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\win32\bridge\AccessBridgeCallbacks.h; size: 5518 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\win32\bridge\AccessBridgeCalls.h; size: 36093 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\win32\bridge\AccessBridgePackages.h; size: 77582 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\win32\jawt_md.h; size: 1895 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\include\win32\jni_md.h; size: 1580 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\ADDITIONAL_LICENSE_INFO; size: 2114 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\aes.md; size: 1444 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\asm.md; size: 1584 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\ASSEMBLY_EXCEPTION; size: 1522 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\c-libutl.md; size: 1556 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\cldr.md; size: 9130 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\icu.md; size: 11086 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\LICENSE; size: 19274 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\public_suffix.md; size: 17785 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\unicode.md; size: 2384 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\wepoll.md; size: 1454 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.base\zlib.md; size: 1011 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.compiler\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.compiler\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.compiler\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.datatransfer\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.datatransfer\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.datatransfer\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.desktop\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.desktop\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.desktop\colorimaging.md; size: 167 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.desktop\freetype.md; size: 28780 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.desktop\giflib.md; size: 1288 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.desktop\harfbuzz.md; size: 2886 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.desktop\jpeg.md; size: 3475 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.desktop\lcms.md; size: 1178 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.desktop\libpng.md; size: 5398 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.desktop\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.desktop\mesa3d.md; size: 5732 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.instrument\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.instrument\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.instrument\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.logging\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.logging\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.logging\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.management\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.management\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.management\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.management.rmi\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.management.rmi\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.management.rmi\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.naming\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.naming\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.naming\LICENSE; size: 33 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:08 CET 2023, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, but not for update, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.net.http\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.net.http\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.net.http\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.prefs\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.prefs\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.prefs\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.rmi\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.rmi\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.rmi\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.scripting\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.scripting\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.scripting\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.se\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.se\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.se\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.security.jgss\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.security.jgss\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.security.jgss\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.security.sasl\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.security.sasl\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.security.sasl\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.smartcardio\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.smartcardio\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.smartcardio\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.sql\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.sql\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.sql\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.sql.rowset\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.sql.rowset\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.sql.rowset\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.transaction.xa\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.transaction.xa\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.transaction.xa\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml\bcel.md; size: 11195 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml\dom.md; size: 3028 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml\jcup.md; size: 1158 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml\xalan.md; size: 13494 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml\xerces.md; size: 11852 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml.crypto\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml.crypto\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml.crypto\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\java.xml.crypto\santuario.md; size: 11436 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.accessibility\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.accessibility\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.accessibility\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.attach\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.attach\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.attach\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.charsets\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.charsets\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.charsets\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.crypto.cryptoki\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.crypto.cryptoki\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.crypto.cryptoki\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.crypto.cryptoki\pkcs11cryptotoken.md; size: 3923 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.crypto.cryptoki\pkcs11wrapper.md; size: 2131 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.crypto.ec\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.crypto.ec\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.crypto.ec\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.crypto.mscapi\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.crypto.mscapi\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:09 CET 2023, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, but not for update, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.crypto.mscapi\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.dynalink\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.dynalink\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.dynalink\dynalink.md; size: 1502 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.dynalink\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.httpserver\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.httpserver\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.httpserver\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.ed\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.ed\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.ed\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.jvmstat\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.jvmstat\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.jvmstat\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.le\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.le\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.le\jline.md; size: 1579 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.le\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.vm.ci\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.vm.ci\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.vm.ci\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.vm.compiler\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.vm.compiler\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.vm.compiler\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.vm.compiler.management\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.vm.compiler.management\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.internal.vm.compiler.management\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.jdwp.agent\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.jdwp.agent\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.jdwp.agent\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.jfr\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.jfr\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.jfr\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.jsobject\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.jsobject\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.jsobject\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.localedata\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.localedata\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.localedata\cldr.md; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.localedata\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.localedata\thaidict.md; size: 1346 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.management\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.management\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.management\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.management.agent\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.management.agent\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.management.agent\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.management.jfr\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.management.jfr\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.management.jfr\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.naming.dns\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.naming.dns\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.naming.dns\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.naming.rmi\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.naming.rmi\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.naming.rmi\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.net\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.net\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.net\LICENSE; size: 33 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:10 CET 2023, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, but not for update, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.sctp\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.sctp\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.sctp\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.security.auth\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.security.auth\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.security.auth\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.security.jgss\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.security.jgss\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.security.jgss\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.unsupported\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.unsupported\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.unsupported\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.unsupported.desktop\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.unsupported.desktop\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.unsupported.desktop\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.xml.dom\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.xml.dom\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.xml.dom\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.zipfs\ADDITIONAL_LICENSE_INFO; size: 49 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.zipfs\ASSEMBLY_EXCEPTION; size: 44 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\legal\jdk.zipfs\LICENSE; size: 33 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\classlist; size: 71532 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\fontconfig.bfc; size: 4630 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\fontconfig.properties.src; size: 12345 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\jawt.lib; size: 1682 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\jfr\default.jfc; size: 35581 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\jfr\profile.jfc; size: 35541 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\jrt-fs.jar; size: 110510 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\jvm.cfg; size: 29 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\jvm.lib; size: 1041062 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\modules; size: 99502421 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:11 CET 2023, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, but not for update, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\psfont.properties.ja; size: 3793 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\psfontj2d.properties; size: 11390 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\security\blocked.certs; size: 2527 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\security\cacerts; size: 169739 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\security\default.policy; size: 10735 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\security\public_suffix_list.dat; size: 234080 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\tzdb.dat; size: 102670 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\lib\tzmappings; size: 22143 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\jre\release; size: 854 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\activation-1.1.jar; size: 62983 bytes; exists: false
+       File options set to: [fileTime: Thu Feb 23 11:53:34 CET 2023, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\aopalliance-1.0.jar; size: 4467 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\app-5.4.6-148.jar; size: 10387483 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\bcpkix-jdk15to18-1.71.jar; size: 1002333 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\bcprov-jdk15to18-1.71.jar; size: 4550214 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\bcutil-jdk15to18-1.71.jar; size: 672253 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\commons-cli-1.4.jar; size: 53820 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\commons-codec-1.11.jar; size: 335042 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\commons-compress-1.20.jar; size: 632424 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\commons-csv-1.6.jar; size: 42400 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\commons-io-2.6.jar; size: 214788 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\commons-lang3-3.3.2.jar; size: 412739 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\commons-logging-1.2.jar; size: 61829 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\controlsfx-11.1.2.jar; size: 1378379 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\easybind-1.0.3.jar; size: 44787 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\exp4j-0.4.8.jar; size: 46942 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\failureaccess-1.0.1.jar; size: 4617 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\guava-29.0-jre.jar; size: 2792264 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\guice-5.1.0.jar; size: 777563 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\guice-assistedinject-5.1.0.jar; size: 50857 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\httpclient-4.5.13.jar; size: 780321 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\httpcore-4.4.13.jar; size: 328593 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\httpcore-nio-4.4.12.jar; size: 367672 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\jasypt-1.9.2.jar; size: 129265 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\javafx-base-19.0.2-win.jar; size: 752453 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\javafx-base-19.0.2.jar; size: 302 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\javafx-controls-19.0.2-win.jar; size: 2547920 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\javafx-controls-19.0.2.jar; size: 306 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\javafx-fxml-19.0.2-win.jar; size: 130077 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\javafx-graphics-19.0.2-win.jar; size: 5879642 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\javafx-graphics-19.0.2.jar; size: 306 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\javafx-swing-19.0.2-win.jar; size: 88807 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\javax.inject-1.jar; size: 2497 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\javax.mail-1.6.2.jar; size: 659031 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\jaxb-api-2.2.11.jar; size: 102244 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar; size: 2199 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\log4j-api-2.20.0.jar; size: 313296 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\log4j-core-2.20.0.jar; size: 1847550 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\log4j-slf4j-impl-2.20.0.jar; size: 23862 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\mbassador-1.3.2.jar; size: 98376 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\mvvmfx-validation-1.8.0.jar; size: 20637 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\org.eclipse.paho.client.mqttv3-1.2.5.jar; size: 241861 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\org.eclipse.persistence.asm-2.7.4.jar; size: 508314 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\org.eclipse.persistence.core-2.7.4.jar; size: 5393770 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\org.eclipse.persistence.moxy-2.7.4.jar; size: 652945 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\prosys-opc-ua-simulation-server-5.4.6-148.jar; size: 1310 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\lib\slf4j-api-1.7.28.jar; size: 41117 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\autoUpdater.exe; size: 811600 bytes; exists: false
+       File options set to: [fileTime: Thu Feb 23 11:53:34 CET 2023, mode: 755, overwriteMode: If newer otherwise ask, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4jdel.exe; size: 95936 bytes; exists: false
+       File options set to: [fileTime: Thu Feb 23 11:53:34 CET 2023, mode: 644, overwriteMode: Always, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4jinst.dll; size: 232128 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\standaloneUpdater.exe; size: 811600 bytes; exists: false
+       File options set to: [fileTime: Thu Feb 23 11:53:34 CET 2023, mode: 755, overwriteMode: If newer otherwise ask, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\UaSimulationServer.exe; size: 474192 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\UaSimulationServer.vmoptions; size: 477 bytes; exists: false
+       File options set to: [fileTime: Thu Feb 23 11:53:34 CET 2023, mode: 644, overwriteMode: Never, shared: false, uninstallMode: If created, but not for update, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\doc\Prosys_OPC_UA_Simulation_Server_UserManual.pdf; size: 1853456 bytes; exists: false
+       File options set to: [fileTime: Thu Feb 23 11:53:34 CET 2023, mode: 644, overwriteMode: Always ask except for update, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\license\LICENSE.apache2.0; size: 11557 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\license\LICENSE.bouncycastle; size: 1129 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\license\LICENSE.controlsfx; size: 1560 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\license\LICENSE.epl2.0; size: 14474 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\license\LICENSE.h2; size: 377 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\license\LICENSE.lgpl2.1; size: 26932 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\license\LICENSE.mit; size: 1090 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\license\LICENSE.txt; size: 2573 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\license\Prosys_OPC_UA_Simulation_Server_License.pdf; size: 80577 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\uninstall.exe; size: 811600 bytes; exists: false
+       File options set to: [fileTime: Thu Feb 23 11:53:34 CET 2023, mode: 700, overwriteMode: If newer otherwise ask, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\inst_jre.cfg; size: 68 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:40 CET 2023, mode: 644, overwriteMode: Always, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\pref_jre.cfg; size: 64 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:40 CET 2023, mode: 644, overwriteMode: Always, shared: false, uninstallMode: If created, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4jruntime.jar; size: 2279354 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:40 CET 2023, mode: 644, overwriteMode: Always, shared: false, uninstallMode: Always, delayIfNecessary: false]
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\MessagesDefault; size: 34826 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4jparams.conf; size: 189197 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\stats.properties; size: 673 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\launchers.xml; size: 268 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\user.jar; size: 60753 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\user\flatlaf.jar; size: 758100 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_0_gaksa4.utf8; size: 34826 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_10_gaksa4_259ij1.png; size: 8252 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_11_gaksa4_18gg8kx.png; size: 9202 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_11_gaksa4_18gg8kx@2x.png; size: 15419 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_11_gaksa4_18gg8kx@2x_dark.png; size: 15837 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_11_gaksa4_18gg8kx_dark.png; size: 8891 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_1_gaksa4_p9kyo1.png; size: 491 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_2_gaksa4_1rscnpz.png; size: 965 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_3_gaksa4_a0r982.png; size: 1922 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_4_gaksa4_emmn6n.png; size: 3808 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_5_gaksa4.txt; size: 9473 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_6_gaksa4_x7nby6.png; size: 756 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_7_gaksa4_vd2dea.png; size: 1187 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_8_gaksa4_un9apv.png; size: 1884 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\i4j_extf_9_gaksa4_1xth8wx.png; size: 4609 bytes; exists: false
+       Install file: C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\.install4j\installer.ico; size: 118854 bytes; exists: false
+       Execute action successful after 4258 ms
+[INFO] com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction [ID 18]: Execute action
+       Property categories: Application
+       Property linkDirectory: 
+       Property programGroupEntryConfigs: []
+       Property programGroupName: 
+       Property uninstallerMenuName: Prosys OPC UA Simulation Server Uninstaller
+       Property addDefaultLauncherLinks: true
+       Property addUninstaller: false
+       Property allUsers: true
+       Property failForSymlinksNotCreated: false
+       Property rollbackSupported: true
+       Property unixMenuEntries: true
+       Property unixSymlinks: true
+       Variable changed: sys.programGroupName=Prosys OPC UA Simulation Server[class java.lang.String]
+       Variable changed: sys.symlinkDir=/usr/local/bin[class java.lang.String]
+       Install file: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Prosys OPC UA Simulation Server\Prosys OPC UA Simulation Server.lnk; size: 2357 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:40 CET 2023, mode: 644, overwriteMode: Always, shared: false, uninstallMode: Always, delayIfNecessary: false]
+       Execute action successful after 148 ms
+[INFO] com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction [ID 19]: Execute action
+       Property icon: null
+       Property iconSource: Installer icon
+       Property itemName: Prosys OPC UA Simulation Server 5.4.6-148
+       Property persistentProperties: {}
+       Property rollbackSupported: true
+       Execute action successful after 48 ms
+[INFO] com.install4j.runtime.beans.actions.desktop.CreateDesktopLinkAction [ID 700]: Execute action
+       Property additionalDesktopFileEntries: 
+       Property arguments: 
+       Property description: 
+       Property file: UaSimulationServer.exe
+       Property name: Prosys OPC UA Simulation Server
+       Property startIn: null
+       Property unixIconFile: null
+       Property winIconFile: null
+       Property allUsers: true
+       Property macSingleBundleTarget: true
+       Property rollbackSupported: true
+       Property runAsAdministrator: false
+       Install file: C:\Users\Public\Desktop\Prosys OPC UA Simulation Server.lnk; size: 2357 bytes; exists: false
+       File options set to: [fileTime: Thu Nov 30 09:17:40 CET 2023, mode: 644, overwriteMode: Always, shared: false, uninstallMode: Always, delayIfNecessary: false]
+       Execute action successful after 42 ms
+[INFO] com.install4j.runtime.beans.screens.InstallationScreen [ID 15]: Rollback barrier reached
+       command: move 1 screens, executing actions, checking condition
+[INFO] com.install4j.runtime.beans.screens.FinishedScreen [ID 20]: Show screen
+       Variable changed: executeLauncherAction=true[class java.lang.Boolean]
+[INFO] com.install4j.runtime.beans.actions.finish.ExecuteLauncherAction [ID 515]: Execute action
+       Property arguments: null
+       Property launcherId: 201
+       Property rollbackSupported: false
+       Launching C:\Program Files\ProsysOPC\Prosys OPC UA Simulation Server\UaSimulationServer.exe
+       execute directly
+       Execute action successful after 561 ms
+[INFO] com.install4j.runtime.beans.screens.FinishedScreen [ID 20]: command: finish
+       cleaning up
+       Finished at 2023-11-30 09:18:05

@@ -1,0 +1,45 @@
+Use of Prosys OPC UA Simulation Server is allowed under several license agreements.
+
+LICENSE
+
+Prosys OPC UA Simulation Server License
+
+  Prosys OPC UA Simulation Server is covered by the license terms in 
+  
+  Prosys_OPC_UA_Simulation_Server_License.pdf
+
+Libraries
+
+  The application uses the following libraries, which are covered by individual licenses,
+  available in the following files. 
+
+  -- Library --                			-- License file --			-- Product web site --
+  Apache Commons Codec  				LICENSE.apache2.0			https://commons.apache.org/proper/commons-codec
+  Apache Commons Compress         		LICENSE.apache2.0			https://commons.apache.org/proper/commons-compress
+  Apache Commons Lang  					LICENSE.apache2.0			https://commons.apache.org/proper/commons-lang
+  Apache Commons Logging Component  	LICENSE.apache2.0			https://commons.apache.org/proper/commons-logging
+  Apache Commons CSV					LICENSE.apache2.0			https://commons.apache.org/proper/commons-csv/
+  Apache Commons IO         			LICENSE.apache2.0			http://commons.apache.org/proper/commons-io
+  Apache HttpComponents         		LICENSE.apache2.0			https://hc.apache.org
+  Apache Logging Services				LICENSE.apache2.0			https://logging.apache.org
+  Bouncy Castle security				LICENSE.bouncycastle		https://www.bouncycastle.org
+  ControlsFX							LICENSE.controlsfx			https://github.com/controlsfx/controlsfx
+  Eclipse Paho							LICENSE.epl2.0				https://www.eclipse.org/paho
+  exp4j									LICENSE.apache2.0			https://www.objecthunter.net/exp4j
+  Guava									LICENSE.apache2.0			https://github.com/google/guava
+  Guice									LICENSE.apache2.0			https://github.com/google/guice
+  Hibernate ORM							LICENSE.lgpl2.1				https://hibernate.org/orm
+  H2									LICENSE.h2					https://www.h2database.com
+  Jasypt								LICENSE.apache2.0			https://www.jasypt.org
+  MBassador								LICENSE.mit					https://github.com/bennidi/mbassador
+  mvvmFX								LICENSE.apache2.0			https://github.com/sialcasa/mvvmFX
+  Simple Logging Facade for Java		LICENSE.mit					https://www.slf4j.org
+
+  
+This software contains unmodified binary redistributions for H2 database engine (http://www.h2database.com/),
+which is dual licensed and available under a modified version of the MPL 1.1 (Mozilla Public License)
+or under the (unmodified) EPL 1.0 (Eclipse Public License).
+An original copy of the license agreement can be found at: http://www.h2database.com/html/license.html  
+
+
+This software uses the Roboto font under Apache License, Version 2.0, see file LICENSE.apache2.0.

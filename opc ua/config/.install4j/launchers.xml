@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launcherIntegrations>
+  <launcher id="201" checkUpdater="false">
+    <application id="986" launchMode="startupFirstWindow" launchInNewProcess="true" launchSchedule="updateSchedule" />
+  </launcher>
+</launcherIntegrations>

@@ -1,0 +1,106 @@
+SOFTWARE LICENSE AGREEMENT FOR PROSYS OPC UA SIMULATION SERVER
+
+1 Grant of License
+
+This Software License Agreement (hereinafter referred to as “Agreement”) covers Prosys OPC UA Simulation Server software (hereinafter referred to as “Software”) licensed by the user hereunder (hereinafter referred to as “You” or “you”).
+
+Prosys OPC, having registered company name Prosys OPC Ltd (hereinafter referred to as “Licensor”), Finnish company with domicile in Espoo and address Tekniikantie 14, FI-02150 Espoo, Finland, grants you the right to use the Software subject to the following terms.
+
+The Software is distributed under 3 license types:
+- Software with Free License - right to use with limited functionality.
+- Software with Evaluation License - right to use with full functionality for a limited period.
+- Software with Professional License - permanent right to use with full functionality.
+
+You can obtain Evaluation License Keys and Professional License Keys from the Licensor or one of its authorized resellers.
+
+2 Period of Agreement
+
+This Agreement will enter into force when you install or use the Software for the first time. By installing or using the Software, you accept this Agreement binding on you.
+
+3 Special Terms for the Software with Free License
+
+You may use the Software with Free License free of charge with limited functionality, in the manner and for the purposes described in the product documentation. Support is limited to be forum-based if any.
+
+You are not allowed to distribute, transfer, transmit, sell, rent, lease, lend, copy, modify, translate, sublicense, time-share, or bundle with your own products, systems and services, the Software or any part of the Software. 
+
+Instead of chapter 8 Limited Warranty, the Software is provided "AS IS" without warranty of any kind. 
+
+The Licensor may include different practical limitations to the Software with Free License. Limitations may include (but not restrict to) reduced features, time limited use or limited materials produced by the Software. Practical limitations may appear in the Software, documentation or materials produced by the Software. In any case the Licensor has the absolute right at any time to terminate any Free Licenses of the Software with immediate effect.
+
+4 Special Terms for the Software with Evaluation License
+
+You may use the Software with Evaluation License free of charge with full functionality, for evaluation purposes in the manner and for the purposes described in the product documentation. You are also entitled to receive both forum-based and email-based support.
+
+You are not allowed to distribute, transfer, transmit, sell, rent, lease, lend, copy, modify, translate, sublicense, time-share, or bundle with your own products, systems and services, the Software or any part of the Software. You are also not allowed to modify or distribute materials, files or data produced by the Software, regardless of the way how such a distribution takes place.
+
+Instead of chapter 8 Limited Warranty, the Software is provided "AS IS" without warranty of any kind.
+
+The Licensor has the absolute right at any time to terminate any Evaluation Licenses of the Software with immediate effect.
+
+5 Right to Use and Restrictions for the Software with Professional License
+
+If you obtained the Software from the Licensor or one of its authorized resellers, and subject to your payment of applicable Professional License fee and your compliance with the terms of this Agreement, the Licensor grants to you a non-exclusive license to install and use the Software in the manner and for the purposes described in the product documentation. You are also entitled to receive both forum-based and email-based support.
+
+This Software with Professional License functionality is licensed per Computer, where Computer means physical hardware, virtual machine, or container. You shall restrict the installation and use of the Software on only as many Computers, for which you have purchased a valid license. In case a license has been sold to be used on a specific Computer, you may not transfer the license (install the Software) to another Computer without a written permission of the Licensor and paying the applicable service or license fee.
+
+For a single Computer, the Software is considered in use when any portion of the Software is loaded in memory or virtual memory. The quantity of the Software in use, is considered to be the maximum number of Computers on which the Software is loaded in memory or virtual memory at any time.
+
+Except as provided in this Agreement, you may not distribute, transfer, transmit, sell, rent, lease, lend, copy, modify, translate, sublicense, time-share the Software or any part of the Software.
+
+If you purchased the Software as an upgrade, it constitutes a single product together with the product that you upgraded and may not be used to increase the total number of your licenses of the Software. You may use the upgraded product only in accordance with this Agreement.
+
+6 Rights to the Software
+
+All proprietary rights to the Software and the related materials belong to the Licensor or its contracting parties. The license does not give you any ownership or title to the Software.
+
+All intellectual property rights associated with or arising from the Software including copyright, trade secrets, patents and trademarks belong to the Licensor.
+
+Any reproductions of any portion of the Software by you shall include any proprietary and statutory copyright notices present in the original Software.
+
+You acknowledge that the Software and its source code remain a confidential trade secret of the Licensor or its suppliers and therefore you agree not to modify the Software or attempt to copy or emulate functions, or decipher, decompile, disassemble or reverse engineer the Software.
+
+7 Termination of the License
+
+Notwithstanding the provisions above, the Licensor shall have the right to terminate this Agreement with immediate effect in case of any breach of this Agreement by you.
+
+On the expiration of this Agreement you shall return to the Licensor the Software and the support material or verifiably destroy it.
+
+8 Limited Warranty for the Software with Professional License
+
+The Licensor warrants that the Software, as updated and when properly used, will perform substantially in accordance with its accompanying documentation, for a period of ninety (90) days from the date of receipt. Any implied warranties on the Software are limited to ninety (90) days. 
+
+The Licensor’s entire liability and your exclusive remedy shall be, at the Licensor’s option, either (a) return of the price paid, or (b) repair or replacement of the Software that does not meet the Limited Warranty and which is returned to the Licensor. This Limited Warranty is void if the Software fails as a result of accident, abuse, misapplication or if used in connection with other software differing to specifications and instructions. Any replacement Software will be warranted for the remainder of the original warranty period or thirty (30) days, whichever is longer.
+
+To the maximum extent permitted by applicable law, the Licensor and its suppliers disclaim all other warranties, either express or implied, including but not limited to, any implied warranties of merchantability, fitness for a particular purpose, non-infringement or title, with regard to the Software and the accompanying documentation.
+
+To the maximum extent permitted by applicable law, in no event shall the Licensor be liable for any damages whatsoever (including, without limitation, damages for loss of business profits, business interruption, loss of business information, or any other pecuniary loss) arising out the use of or inability to use the Software, even if the Licensor has been advised of the possibility of such damages. In any case, the Licensor’s entire liability under any provisions of this Agreement shall be limited to the amount actually paid by you.
+
+The warranties given in this article constitute the only representations and warranties made by the Licensor with respect to defects or non-conformities in the Software and are in lieu of all other warranties, whether expressed or implied, including implied warranties of merchantability and fitness for a particular purpose.
+
+9 Updates, Supplements and Services
+
+These terms shall also apply to any updates, supplement, Internet-based service and support services for the Software. These terms may be supplemented or amended by the terms accompanying the items.
+
+10 Third Party Software Components
+
+This Software utilizes third party software components and you can find information about them from the download page and from the about dialog of the Software.
+
+11 Invalid Clauses
+
+In case one or more provisions of this Agreement are invalid, the validity of the remaining provisions of this Agreement shall not be affected thereby.
+
+12 Applicable Law and Dispute Settlement
+
+This Agreement shall be governed by and construed under the laws of Finland excluding the rules of conflicts of laws of the Finnish legislation.
+
+The competent court of the domicile of the Licensor shall have jurisdiction in any dispute arising out of this Agreement.
+
+November 16, 2022
+
+PROSYS OPC LTD
+Tekniikantie 14
+FI-02150 Espoo
+Finland
+Phone +358 9 420 9007
+sales@prosysopc.com
+www.prosysopc.com
