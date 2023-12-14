@@ -1,74 +1,53 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
+include 'db_config.php'; // Include your database configuration file
+
+// Check if the cart is empty
+if (empty($_SESSION["cart"])) {
+    echo "Your cart is empty. <a href='webshop.php'>Go back to the shop</a>.";
+    exit;
 }
 
-// Function to calculate total price
-function calculateTotal($cart) {
-    $total = 0;
-    foreach ($cart as $item) {
-        $total += $item['price'] * $item['quantity'];
-    }
-    return $total;
-}
-
+$cartItems = implode(",", array_keys($_SESSION["cart"]));
+$sql = "SELECT ProductID, ProductNaam, Stock FROM product WHERE ProductID IN ($cartItems)";
+$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Shopping Cart</title>
+    <title>Your Shopping Cart</title>
 </head>
 <body>
     <h1>Your Shopping Cart</h1>
 
-    <?php if (empty($_SESSION['cart'])): ?>
-        <p>Your cart is empty.</p>
+    <?php if ($result->num_rows > 0): ?>
+        <form action="validate_order.php" method="post">
+            <table>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                </tr>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <tr>
+                        <td><?php echo $row["ProductID"]; ?></td>
+                        <td><?php echo $row["ProductNaam"]; ?></td>
+                        <td><?php echo $_SESSION["cart"][$row["ProductID"]]; ?></td>
+                    </tr>
+                <?php endwhile; ?>
+            </table> <!-- Close the table tag outside the while loop -->
+            <input type="submit" value="Validate Order">
+        </form>
     <?php else: ?>
-        <table>
-            <tr>
-                <th>Part</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Subtotal</th>
-            </tr>
-
-            <?php foreach ($_SESSION['cart'] as $item): ?>
-            <tr>
-                <td><?php echo $item['name']; ?></td>
-                <td><?php echo $item['quantity']; ?></td>
-                <td>$<?php echo $item['price']; ?></td>
-                <td>$<?php echo $item['quantity'] * $item['price']; ?></td>
-            </tr>
-            <?php endforeach; ?>
-
-            <tr>
-                <td colspan="3" align="right">Total:</td>
-                <td>$<?php echo calculateTotal($_SESSION['cart']); ?></td>
-            </tr>
-        </table>
+        <p>Your cart is empty.</p>
     <?php endif; ?>
+
+    <nav>
+        <!-- Navigation Links -->
+    </nav>
+
+    <?php $conn->close(); ?>
 </body>
 </html>
-
-<!-- Existing cart display code -->
-
-<form action="summary.php" method="POST">
-    <h3>Select Pickup Time</h3>
-    <label for="pickup_date">Pickup Date:</label>
-    <input type="date" id="pickup_date" name="pickup_date" required>
-
-    <label for="pickup_slot">Pickup Time Slot:</label>
-    <select id="pickup_slot" name="pickup_slot" required>
-        <option value="9am-12pm">9 AM - 12 PM</option>
-        <option value="12pm-3pm">12 PM - 3 PM</option>
-        <option value="3pm-6pm">3 PM - 6 PM</option>
-        <!-- Add more slots as needed -->
-    </select>
-
-    <button type="submit">Validate Order</button>
-</form>
-

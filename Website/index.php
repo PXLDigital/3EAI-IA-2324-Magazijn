@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Parts Order System</title>
+    <title>Welcome to Our Website</title>
 </head>
 <body>
-    <h1>Welcome to Our Parts Ordering System</h1>
-    <form method="POST" action="submit_contact.php">
-        <label for="contact">Enter Email or Phone:</label>
-        <input type="text" id="contact" name="contact" required>
-        <button type="submit">Submit</button>
-    </form>
+    <h2>Enter Your Email</h2>
+    <form action="http://localhost/Website_V2/validate_email.php" method="post">
+    Email: <input type="email" name="email">
+    <input type="submit" value="Submit">
+</form>
 </body>
 </html>
