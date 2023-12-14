@@ -13,12 +13,6 @@ session_start();
 if (isset($_SESSION['order_completed']) && $_SESSION['order_completed']) {
     // Unset the variable to avoid repeated tab opening
     unset($_SESSION['order_completed']);
-
-    echo "<script type='text/javascript'>
-            window.onload = function() {
-                window.open('send_order_confirmation.php', '_blank');
-            };
-          </script>";
 }
 ?>
 
